@@ -1,4 +1,5 @@
 
+
     <!DOCTYPE html>
     <html lang="zh-TW">
     <head>
@@ -63,7 +64,7 @@
             }
             .button {
                 display: block;
-                width: 100%;
+                width: calc(100% - 30px); /* 調整按鈕寬度 */
                 padding: 10px;
                 border: none;
                 border-radius: 5px;
@@ -74,18 +75,29 @@
                 background-color: #4CAF50;
                 color: white;
                 margin-top: 10px;
+                margin: 0 auto; /* 置中按鈕 */
             }
             .copied {
                 background-color: #45a049;
             }
             .toggle-button {
                 display: block;
-                background-color: #333;
+                background-color: transparent; /* 透明背景 */
                 color: white;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
                 margin-bottom: 10px;
+                position: fixed; /* 固定位置 */
+                top: 10px; /* 距離頂部 10px */
+                left: 10px; /* 距離左側 10px */
+                z-index: 1000; /* 確保在最上層 */
+            }
+            .toggle-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 4px 0;
             }
             @media (max-width: 768px) {
                 .sidebar {
@@ -101,7 +113,11 @@
         </style>
     </head>
     <body>
-        <div class="toggle-button" onclick="toggleSidebar()">顯示/隱藏分類</div>
+        <div class="toggle-button" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="sidebar">
             <h2>分類</h2>
             
@@ -128,7 +144,7 @@
             <h2 id="首購推薦">首購推薦</h2>
             
             <div class="code-card">
-                <h2>【首購推薦】新戶首二次訂餐，可各折價 100 元 (低消 150 元，可全額折抵，沒點過餐就算新戶)，不限卡別，再享 30 天消費滿  49 元免運</h2>
+                <h2>【首購推薦】新戶首二次訂餐，可各折價 100 元 (低消 150 元，可全額折抵，沒點過餐就算新戶)，不限卡別，再享 30 天消費滿  49 元免運</h2>
                 <p>優惠碼: <span class="code">afftweats10sep24</span></p>
                 <p>有效期限: 2024/09/30</p>
                 <a href="ubereats://promo/apply?client_id=eats&promoCode=afftweats10sep24" class="button" onclick="copyCode('afftweats10sep24', this); return false;">複製優惠碼並開啟APP</a>
@@ -699,14 +715,14 @@
             <h2 id="商城-指定店家">商城-指定店家</h2>
             
             <div class="code-card">
-                <h2>【商城-指定店家】統一超商 消費滿 399 元現折 80 元，每人可用 1 次</h2>
+                <h2>【商城-指定店家】統一超商 消費滿 399 元現折 80 元，每人可用 1 次</h2>
                 <p>優惠碼: <span class="code">前往訂餐>></span></p>
                 <p>有效期限: 2024/09/24</p>
                 <a href="ubereats://promo/apply?client_id=eats&promoCode=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%3E%3E" class="button" onclick="copyCode('前往訂餐>>', this); return false;">複製優惠碼並開啟APP</a>
             </div>
             
             <div class="code-card">
-                <h2>【商城-指定店家】全聯福利中心、大潤發、家樂福、家樂福超市、優市 哈根達斯品脫限時特價 198 元起</h2>
+                <h2>【商城-指定店家】全聯福利中心、大潤發、家樂福、家樂福超市、優市 哈根達斯品脫限時特價 198 元起</h2>
                 <p>優惠碼: <span class="code">前往訂餐>></span></p>
                 <p>有效期限: 2024/09/24</p>
                 <a href="ubereats://promo/apply?client_id=eats&promoCode=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%3E%3E" class="button" onclick="copyCode('前往訂餐>>', this); return false;">複製優惠碼並開啟APP</a>
