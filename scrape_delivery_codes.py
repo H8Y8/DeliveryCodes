@@ -311,7 +311,8 @@ def generate_html(ubereats_codes, foodpanda_codes):
     template = Template(html_template)
     html_content = template.render(categories=categories)
     
-    filename = '//Dog_NAS/docker/UbereatsCode/DeliveryCodes.html'  # 修改為您NAS上的路徑
+    # 修改這裡的檔案路徑
+    filename = 'my-webpages/DeliveryCodes.html'  # 使用相對路徑
     with open(filename, 'w', encoding='utf-8') as file:
         file.write(html_content)
     print(f"HTML 檔案已保存至: {filename}")
