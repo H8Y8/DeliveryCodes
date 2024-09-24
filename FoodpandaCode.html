@@ -1,4 +1,5 @@
 
+
     <!DOCTYPE html>
     <html lang="zh-TW">
     <head>
@@ -18,14 +19,18 @@
                 color: #333;
             }
             .sidebar {
-                width: 200px;
+                width: 250px;
                 background-color: #333;
                 padding: 15px;
                 color: white;
                 height: 100vh;
                 position: fixed;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
                 overflow-y: auto;
-                display: none;
+                z-index: 1000;
             }
             .sidebar a {
                 color: white;
@@ -37,8 +42,12 @@
                 background-color: #575757;
             }
             .content {
-                margin-left: 220px;
+                margin-left: 0;
                 padding: 20px;
+                transition: margin-left 0.3s ease;
+            }
+            .content.shifted {
+                margin-left: 250px;
             }
             .code-card {
                 background-color: white;
@@ -63,7 +72,7 @@
             }
             .button {
                 display: block;
-                width: 100%;
+                width: calc(100% - 30px); /* 調整按鈕寬度 */
                 padding: 10px;
                 border: none;
                 border-radius: 5px;
@@ -74,63 +83,76 @@
                 background-color: #4CAF50;
                 color: white;
                 margin-top: 10px;
+                margin: 0 auto; /* 置中按鈕 */
             }
             .copied {
                 background-color: #45a049;
             }
             .toggle-button {
                 display: block;
-                background-color: #333;
+                background-color: transparent; /* 透明背景 */
                 color: white;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
                 margin-bottom: 10px;
+                position: fixed; /* 固定位置 */
+                top: 10px; /* 距離頂部 10px */
+                left: 10px; /* 距離左側 10px */
+                z-index: 1001; /* 確保在最上層 */
+            }
+            .toggle-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 4px 0;
             }
             @media (max-width: 768px) {
                 .sidebar {
-                    display: block;
-                    position: relative;
                     width: 100%;
-                    height: auto;
+                    transform: translateX(-100%);
                 }
-                .content {
+                .content.shifted {
                     margin-left: 0;
                 }
             }
         </style>
     </head>
     <body>
-        <div class="toggle-button" onclick="toggleSidebar()">顯示/隱藏分類</div>
-        <div class="sidebar">
+        <div class="toggle-button" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="sidebar" id="sidebar">
             <h2>分類</h2>
             
-            <a href="#外送-首購">外送-首購</a>
+            <a href="#外送-首購" onclick="toggleSidebar()">外送-首購</a>
             
-            <a href="#外送-指定店家">外送-指定店家</a>
+            <a href="#外送-指定店家" onclick="toggleSidebar()">外送-指定店家</a>
             
-            <a href="#信用卡優惠">信用卡優惠</a>
+            <a href="#信用卡優惠" onclick="toggleSidebar()">信用卡優惠</a>
             
-            <a href="#外送/自取-信用卡優惠">外送/自取-信用卡優惠</a>
+            <a href="#外送/自取-信用卡優惠" onclick="toggleSidebar()">外送/自取-信用卡優惠</a>
             
-            <a href="#自取-指定店家">自取-指定店家</a>
+            <a href="#自取-指定店家" onclick="toggleSidebar()">自取-指定店家</a>
             
-            <a href="#商城-首購">商城-首購</a>
+            <a href="#商城-首購" onclick="toggleSidebar()">商城-首購</a>
             
-            <a href="#商城">商城</a>
+            <a href="#商城" onclick="toggleSidebar()">商城</a>
             
-            <a href="#商城-指定店家">商城-指定店家</a>
+            <a href="#商城-指定店家" onclick="toggleSidebar()">商城-指定店家</a>
             
-            <a href="#pandapro-首購">pandapro-首購</a>
+            <a href="#pandapro-首購" onclick="toggleSidebar()">pandapro-首購</a>
             
-            <a href="#pandapro">pandapro</a>
+            <a href="#pandapro" onclick="toggleSidebar()">pandapro</a>
             
-            <a href="#pandago-首購">pandago-首購</a>
+            <a href="#pandago-首購" onclick="toggleSidebar()">pandago-首購</a>
             
-            <a href="#pandago">pandago</a>
+            <a href="#pandago" onclick="toggleSidebar()">pandago</a>
             
         </div>
-        <div class="content">
+        <div class="content" id="content">
             <h1>Foodpanda 優惠碼</h1>
             
             <h2 id="外送-首購">外送-首購</h2>
@@ -300,7 +322,7 @@
             </div>
             
             <div class="code-card">
-                <h2>【外送-指定店家】肯德基KFC甜點專賣店 消費滿 279 元現折 30 元</h2>
+                <h2>【外送-指定店家】肯德基KFC甜點專賣店 消費滿 279 元現折 30 元</h2>
                 <p>優惠碼: <span class="code">啃蛋撻九省</span></p>
                 <p>有效期限: 2024/09/29</p>
                 <a href="foodpanda://coupon?code=%E5%95%83%E8%9B%8B%E6%92%BB%E4%B9%9D%E7%9C%81" class="button" onclick="copyCode('啃蛋撻九省', this); return false;">複製優惠碼並開啟APP</a>
@@ -570,7 +592,7 @@
             </div>
             
             <div class="code-card">
-                <h2>【商城-指定店家】家樂福超市 每週一至週五消費滿 699 元享 1 次 9 折優惠，最高折抵 200 元</h2>
+                <h2>【商城-指定店家】家樂福超市 每週一至週五消費滿 699 元享 1 次 9 折優惠，最高折抵 200 元</h2>
                 <p>優惠碼: <span class="code">買樂福九省</span></p>
                 <p>有效期限: 2024/09/30</p>
                 <a href="foodpanda://coupon?code=%E8%B2%B7%E6%A8%82%E7%A6%8F%E4%B9%9D%E7%9C%81" class="button" onclick="copyCode('買樂福九省', this); return false;">複製優惠碼並開啟APP</a>
@@ -641,11 +663,14 @@
         </div>
         <script>
             function toggleSidebar() {
-                var sidebar = document.querySelector('.sidebar');
-                if (sidebar.style.display === 'block') {
-                    sidebar.style.display = 'none';
+                var sidebar = document.getElementById('sidebar');
+                var content = document.getElementById('content');
+                if (sidebar.style.transform === 'translateX(0%)') {
+                    sidebar.style.transform = 'translateX(-100%)';
+                    content.classList.remove('shifted');
                 } else {
-                    sidebar.style.display = 'block';
+                    sidebar.style.transform = 'translateX(0%)';
+                    content.classList.add('shifted');
                 }
             }
 
