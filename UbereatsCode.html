@@ -12,7 +12,6 @@
                 padding: 10px; 
                 margin: 0;
                 background-color: #f0f0f0;
-                display: flex;
             }
             h1 { 
                 text-align: center; 
@@ -26,6 +25,7 @@
                 height: 100vh;
                 position: fixed;
                 overflow-y: auto;
+                display: none;
             }
             .sidebar a {
                 color: white;
@@ -39,7 +39,6 @@
             .content {
                 margin-left: 220px;
                 padding: 20px;
-                flex-grow: 1;
             }
             .code-card {
                 background-color: white;
@@ -79,9 +78,30 @@
             .copied {
                 background-color: #45a049;
             }
+            .toggle-button {
+                display: block;
+                background-color: #333;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+            @media (max-width: 768px) {
+                .sidebar {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
+                .content {
+                    margin-left: 0;
+                }
+            }
         </style>
     </head>
     <body>
+        <div class="toggle-button" onclick="toggleSidebar()">顯示/隱藏分類</div>
         <div class="sidebar">
             <h2>分類</h2>
             
@@ -768,6 +788,15 @@
             
         </div>
         <script>
+            function toggleSidebar() {
+                var sidebar = document.querySelector('.sidebar');
+                if (sidebar.style.display === 'block') {
+                    sidebar.style.display = 'none';
+                } else {
+                    sidebar.style.display = 'block';
+                }
+            }
+
             function copyCode(code, button) {
                 navigator.clipboard.writeText(code).then(function() {
                     button.textContent = '已複製';
