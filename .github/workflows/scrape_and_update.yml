@@ -1,3 +1,4 @@
+```yaml
 name: Update Delivery Codes
 
 on:
@@ -12,19 +13,32 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.PAT }}
+        
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests beautifulsoup4 jinja2
+        
     - name: Run script
       run: python scrape_delivery_codes.py
-    - name: Commit and push if changed
+      
+    - name: Configure Git
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+    - name: Pull latest changes
+      run: |
+        git pull origin main --allow-unrelated-histories
+        
+    - name: Commit and push if changed
+      run: |
         git add -A
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update delivery codes" && git push)
+
+```
