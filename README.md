@@ -4,7 +4,6 @@
 此專案包含兩個 Python 腳本，分別用於爬取 UberEats 和 Foodpanda 的優惠碼，並生成對應的 HTML 頁面。
 
 ## 目錄結構
-.
 ├── ubereats_scraper_mobile.py
 ├── foodpanda_scraper_mobile.py
 └── README.md
