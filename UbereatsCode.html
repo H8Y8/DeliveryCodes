@@ -19,14 +19,18 @@
                 color: #333;
             }
             .sidebar {
-                width: 200px;
+                width: 250px;
                 background-color: #333;
                 padding: 15px;
                 color: white;
                 height: 100vh;
                 position: fixed;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
                 overflow-y: auto;
-                display: none;
+                z-index: 1000;
             }
             .sidebar a {
                 color: white;
@@ -38,8 +42,12 @@
                 background-color: #575757;
             }
             .content {
-                margin-left: 220px;
+                margin-left: 0;
                 padding: 20px;
+                transition: margin-left 0.3s ease;
+            }
+            .content.shifted {
+                margin-left: 250px;
             }
             .code-card {
                 background-color: white;
@@ -91,7 +99,7 @@
                 position: fixed; /* 固定位置 */
                 top: 10px; /* 距離頂部 10px */
                 left: 10px; /* 距離左側 10px */
-                z-index: 1000; /* 確保在最上層 */
+                z-index: 1001; /* 確保在最上層 */
             }
             .toggle-button div {
                 width: 25px;
@@ -101,12 +109,10 @@
             }
             @media (max-width: 768px) {
                 .sidebar {
-                    display: block;
-                    position: relative;
                     width: 100%;
-                    height: auto;
+                    transform: translateX(-100%);
                 }
-                .content {
+                .content.shifted {
                     margin-left: 0;
                 }
             }
@@ -118,7 +124,7 @@
             <div></div>
             <div></div>
         </div>
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <h2>分類</h2>
             
             <a href="#首購推薦">首購推薦</a>
@@ -138,7 +144,7 @@
             <a href="#信用卡回饋">信用卡回饋</a>
             
         </div>
-        <div class="content">
+        <div class="content" id="content">
             <h1>UberEats 優惠碼</h1>
             
             <h2 id="首購推薦">首購推薦</h2>
@@ -805,11 +811,14 @@
         </div>
         <script>
             function toggleSidebar() {
-                var sidebar = document.querySelector('.sidebar');
-                if (sidebar.style.display === 'block') {
-                    sidebar.style.display = 'none';
+                var sidebar = document.getElementById('sidebar');
+                var content = document.getElementById('content');
+                if (sidebar.style.transform === 'translateX(0%)') {
+                    sidebar.style.transform = 'translateX(-100%)';
+                    content.classList.remove('shifted');
                 } else {
-                    sidebar.style.display = 'block';
+                    sidebar.style.transform = 'translateX(0%)';
+                    content.classList.add('shifted');
                 }
             }
 
