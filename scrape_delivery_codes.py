@@ -311,11 +311,27 @@ def generate_html(ubereats_codes, foodpanda_codes):
     template = Template(html_template)
     html_content = template.render(categories=categories)
     
-    # 修改這裡的檔案路徑
-    filename = 'my-webpages/DeliveryCodes.html'  # 使用相對路徑
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(html_content)
-    print(f"HTML 檔案已保存至: {filename}")
+    # 修改這裡的檔案路徑和檔案處理邏輯
+    filename = 'DeliveryCodes.html'  # 直接使用檔案名，不包含目錄
+    
+    # 獲取當前工作目錄
+    current_dir = os.getcwd()
+    print(f"當前工作目錄: {current_dir}")
+    
+    # 列出當前目錄內容
+    print("目錄內容:")
+    for item in os.listdir(current_dir):
+        print(item)
+    
+    # 確保有寫入權限
+    try:
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(html_content)
+        print(f"HTML 檔案已保存至: {os.path.join(current_dir, filename)}")
+    except PermissionError:
+        print(f"沒有權限寫入檔案: {filename}")
+    except Exception as e:
+        print(f"寫入檔案時發生錯誤: {e}")
 
 if __name__ == "__main__":
     ubereats_codes = scrape_ubereats_codes()
