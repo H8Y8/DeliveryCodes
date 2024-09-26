@@ -3,12 +3,13 @@
 此專案包含一個 Python 腳本，用於爬取 UberEats 和 Foodpanda 的優惠碼，並生成對應的 HTML 頁面。
 
 ## 目錄結構
+```markdown
 .
 ├── scrape_delivery_codes.py
 ├── ubereats_scraper_mobile.py
 ├── foodpanda_scraper_mobile.py
 └── README.md
-
+```
 ## 需求
 
 - Python 3.x
@@ -36,7 +37,7 @@ pip install requests beautifulsoup4 jinja2
     python scrape_delivery_codes.py
     ```
 
-2. 腳本會爬取優惠碼並生成一個 HTML 檔案，保存至指定的路徑。預設路徑為 `//Dog_NAS/docker/UbereatsCode/DeliveryCodes.html`。
+2. 腳本會爬取優惠碼並生成一個 HTML 檔案，保存至指定的路徑。預設路徑為 `./DeliveryCodes.html`。
 
 ## 腳本說明
 
