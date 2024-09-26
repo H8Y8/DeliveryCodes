@@ -1,4 +1,5 @@
 
+
     <!DOCTYPE html>
     <html lang="zh-TW">
     <head>
@@ -118,33 +119,21 @@
             @media (prefers-color-scheme: dark) {
                 body {
                     background-color: #121212;
-                    color: #e0e0e0;
+-                       color: #e0e0e0;
++                       color: #ffffff; // 將字體顏色改為白色
+                    }
+                    .code-card {
+                        background-color: #1e1e1e;
+                    }
+                    .code {
+                        color: #ff7b7b;
+                    }
+                    .sidebar {
+                        background-color: #1e1e1e;
+                    }
                 }
-                .code-card {
-                    background-color: #1e1e1e;
-                }
-                .code {
-                    color: #ff7b7b;
-                }
-                .sidebar {
-                    background-color: #1e1e1e;
-                }
-            }
 
-            /* 手動切換深色模式 */
-            body.dark-mode {
-                background-color: #121212;
-                color: #e0e0e0;
-            }
-            body.dark-mode .code-card {
-                background-color: #1e1e1e;
-            }
-            body.dark-mode .code {
-                color: #ff7b7b;
-            }
-            body.dark-mode .sidebar {
-                background-color: #1e1e1e;
-            }
+
         </style>
     </head>
     <body>
@@ -208,7 +197,7 @@
                 <h3 id="UberEats-首購推薦">首購推薦</h3>
                 
                     <div class="code-card">
-                        <h2>【首購推薦】新戶首二次訂餐，可各折價 100 元 (低消 150 元，可全額折抵，沒點過餐就算新戶)，不限卡別，再享 30 天消費滿  49 元免運</h2>
+                        <h2>【首購推薦】新戶首二次訂餐，可各折價 100 元 (低消 150 元，可全額折抵，沒點過餐就算新戶)，不限卡別，再享 30 天消費滿  49 元免運</h2>
                         <p>優惠碼: <span class="code">afftweats10sep24</span></p>
                         <p>有效期限: 2024/09/30</p>
                         <a href="ubereats://promo/apply?client_id=eats&promoCode=afftweats10sep24" class="button" onclick="copyCode('afftweats10sep24', this); return false;">複製優惠碼並開啟APP</a>
@@ -1014,7 +1003,7 @@
                     </div>
                 
                     <div class="code-card">
-                        <h2>【外送-指定店家】肯德基KFC甜點專賣店 消費滿 279 元現折 30 元</h2>
+                        <h2>【外送-指定店家】肯德基KFC甜點專賣店 消費滿 279 元現折 30 元</h2>
                         <p>優惠碼: <span class="code">啃蛋撻九省</span></p>
                         <p>有效期限: 2024/09/29</p>
                         <a href="foodpanda://coupon?code=%E5%95%83%E8%9B%8B%E6%92%BB%E4%B9%9D%E7%9C%81" class="button" onclick="copyCode('啃蛋撻九省', this); return false;">複製優惠碼並開啟APP</a>
@@ -1263,7 +1252,7 @@
                     </div>
                 
                     <div class="code-card">
-                        <h2>【商城-指定店家】家樂福超市 每週一至週五消費滿 699 元享 1 次 9 折優惠，最高折抵 200 元</h2>
+                        <h2>【商城-指定店家】家樂福超市 每週一至週五消費滿 699 元享 1 次 9 折優惠，最高折抵 200 元</h2>
                         <p>優惠碼: <span class="code">買樂福九省</span></p>
                         <p>有效期限: 2024/09/30</p>
                         <a href="foodpanda://coupon?code=%E8%B2%B7%E6%A8%82%E7%A6%8F%E4%B9%9D%E7%9C%81" class="button" onclick="copyCode('買樂福九省', this); return false;">複製優惠碼並開啟APP</a>
@@ -1332,7 +1321,6 @@
                 
             
         </div>
-        <button id="darkModeToggle" class="toggle-button" onclick="toggleDarkMode()">切換深色模式</button>
         <script>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
@@ -1346,9 +1334,7 @@
                 }
             }
 
-            function toggleDarkMode() {
-                document.body.classList.toggle('dark-mode');
-            }
+
 
             function copyCode(code, button) {
                 navigator.clipboard.writeText(code).then(function() {
