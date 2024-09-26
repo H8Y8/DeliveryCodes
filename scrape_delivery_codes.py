@@ -26,6 +26,7 @@ def scrape_ubereats_codes():
                     
                     code = re.sub(r'\s*\(.*?\)\s*', '', code)
                     
+                    # 使用新的 URL Scheme
                     deep_link = f"ubereats://promo/apply?client_id=eats&promoCode={urllib.parse.quote(code)}"
                     
                     codes.append({
@@ -52,7 +53,7 @@ def scrape_foodpanda_codes():
         
         coupon_table = soup.find('table', id='coupon_table')
         if coupon_table:
-            rows = coupon_table.find_all('tr')[1:]
+            rows = coupon_table.find_all('tr')[1:]  # 跳過表頭
             for row in rows:
                 cells = row.find_all('td')
                 if len(cells) == 3:
@@ -63,6 +64,7 @@ def scrape_foodpanda_codes():
                     if code_element and 'data-code' in code_element.attrs:
                         code = code_element.text.strip()
                         
+                        # 創建深層連結
                         deep_link = f"foodpanda://coupon?code={urllib.parse.quote(code)}"
                         
                         codes.append({
@@ -116,14 +118,19 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 line-height: 1.6; 
                 padding: 10px; 
                 margin: 0;
+                background-color: #f0f0f0;
+                color: #333;
                 transition: background-color 0.3s, color 0.3s;
             }
             h1 { 
                 text-align: center; 
+                color: inherit;
             }
             .sidebar {
                 width: 250px;
+                background-color: #333;
                 padding: 15px;
+                color: white;
                 height: 100vh;
                 position: fixed;
                 top: 0;
@@ -134,8 +141,13 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 z-index: 1000;
             }
             .sidebar a {
+                color: white;
+                text-decoration: none;
                 display: block;
                 padding: 10px 0;
+            }
+            .sidebar a:hover {
+                background-color: #575757;
             }
             .content {
                 margin-left: 0;
@@ -154,11 +166,61 @@ def generate_html(ubereats_codes, foodpanda_codes):
             }
             .code-card h2 {
                 margin-top: 0;
+                font-size: 1.2em;
+                color: #444;
+            }
+            .code-card p {
+                margin: 5px 0;
+                font-size: 0.9em;
+                color: #666;
             }
             .code {
                 font-weight: bold;
                 color: #e44d26;
             }
+            .button {
+                display: block;
+                width: calc(100% - 30px); 
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                background-color: #4CAF50;
+                color: white;
+                margin-top: 10px;
+                margin: 0 auto;
+            }
+            .copied {
+                background-color: #45a049;
+            }
+            .toggle-button {
+                display: block;
+                background-color: transparent;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                margin-bottom: 10px;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1001;
+            }
+            .toggle-button div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 4px 0;
+            }
+            .divider {
+                height: 1px;
+                background-color: #575757;
+                margin: 15px 0;
+            }
+
             /* 深色模式 */
             @media (prefers-color-scheme: dark) {
                 body {
@@ -175,18 +237,39 @@ def generate_html(ubereats_codes, foodpanda_codes):
                     background-color: #1e1e1e;
                 }
             }
+
+            /* 手動切換深色模式 */
+            body.dark-mode {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            body.dark-mode .code-card {
+                background-color: #1e1e1e;
+            }
+            body.dark-mode .code {
+                color: #ff7b7b;
+            }
+            body.dark-mode .sidebar {
+                background-color: #1e1e1e;
+            }
         </style>
     </head>
     <body>
+        <div class="toggle-button" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="sidebar" id="sidebar">
             <h2>外送平台優惠碼</h2>
             <h3>UberEats</h3>
             {% for category in categories["UberEats"] %}
-                <a href="#UberEats-{{ category }}">{{ category }}</a>
+                <a href="#UberEats-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
             {% endfor %}
+            <div class="divider"></div>
             <h3>Foodpanda</h3>
             {% for category in categories["Foodpanda"] %}
-                <a href="#Foodpanda-{{ category }}">{{ category }}</a>
+                <a href="#Foodpanda-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
             {% endfor %}
         </div>
         <div class="content" id="content">
@@ -199,7 +282,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
                         <h2>{{ code.content }}</h2>
                         <p>優惠碼: <span class="code">{{ code.code }}</span></p>
                         <p>有效期限: {{ code.expiry }}</p>
-                        <a href="{{ code.deep_link }}" class="button">複製優惠碼並開啟APP</a>
+                        <a href="{{ code.deep_link }}" class="button" onclick="copyCode('{{ code.code }}', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 {% endfor %}
             {% endfor %}
@@ -211,11 +294,12 @@ def generate_html(ubereats_codes, foodpanda_codes):
                         <h2>{{ code.content }}</h2>
                         <p>優惠碼: <span class="code">{{ code.code }}</span></p>
                         <p>有效期限: {{ code.expiry_date }}</p>
-                        <a href="{{ code.deep_link }}" class="button">複製優惠碼並開啟APP</a>
+                        <a href="{{ code.deep_link }}" class="button" onclick="copyCode('{{ code.code }}', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 {% endfor %}
             {% endfor %}
         </div>
+        <button id="darkModeToggle" class="toggle-button" onclick="toggleDarkMode()">切換深色模式</button>
         <script>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
@@ -227,6 +311,26 @@ def generate_html(ubereats_codes, foodpanda_codes):
                     sidebar.style.transform = 'translateX(0%)';
                     content.classList.add('shifted');
                 }
+            }
+
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+            }
+
+            function copyCode(code, button) {
+                navigator.clipboard.writeText(code).then(function() {
+                    button.textContent = '已複製';
+                    button.classList.add('copied');
+                    setTimeout(function() {
+                        button.textContent = '複製優惠碼並開啟APP';
+                        button.classList.remove('copied');
+                        window.location.href = button.href;
+                    }, 500);
+                }, function(err) {
+                    console.error('無法複製文字: ', err);
+                    window.location.href = button.href;
+                });
+                return false;
             }
         </script>
     </body>
@@ -241,10 +345,16 @@ def generate_html(ubereats_codes, foodpanda_codes):
     current_dir = os.getcwd()
     print(f"當前工作目錄: {current_dir}")
     
+    print("目錄內容:")
+    for item in os.listdir(current_dir):
+        print(item)
+    
     try:
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(html_content)
         print(f"HTML 檔案已保存至: {os.path.join(current_dir, filename)}")
+    except PermissionError:
+        print(f"沒有權限寫入檔案: {filename}")
     except Exception as e:
         print(f"寫入檔案時發生錯誤: {e}")
 
