@@ -225,33 +225,37 @@ def generate_html(ubereats_codes, foodpanda_codes):
             @media (prefers-color-scheme: dark) {
                 body {
                     background-color: #121212;
-                    color: #e0e0e0;
+                    color: #ffffff; // 將字體顏色改為白色
+                }
+                h1, h2, h3, p {
+                    color: #ffffff; // 將標題和段落文字顏色改為白色
                 }
                 .code-card {
                     background-color: #1e1e1e;
                 }
+                .code-card h2 {
+                    color: #ffffff; // 將優惠碼標題顏色改為白色
+                }
+                .code-card p {
+                    color: #dddddd; // 將段落文字顏色調亮
+                }
                 .code {
-                    color: #ff7b7b;
+                    color: #ff7b7b; // 保持優惠碼顏色
+                }
+                .button {
+                    color: #ffffff; // 按鈕文字顏色改為白色
+                    background-color: #4CAF50; // 按鈕背景保持不變或根據需要調整
                 }
                 .sidebar {
                     background-color: #1e1e1e;
+                    color: #ffffff; // 側邊欄文字顏色改為白色
+                }
+                .sidebar a {
+                    color: #ffffff; // 側邊欄連結文字顏色改為白色
                 }
             }
 
-            /* 手動切換深色模式 */
-            body.dark-mode {
-                background-color: #121212;
-                color: #e0e0e0;
-            }
-            body.dark-mode .code-card {
-                background-color: #1e1e1e;
-            }
-            body.dark-mode .code {
-                color: #ff7b7b;
-            }
-            body.dark-mode .sidebar {
-                background-color: #1e1e1e;
-            }
+
         </style>
     </head>
     <body>
@@ -299,7 +303,6 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 {% endfor %}
             {% endfor %}
         </div>
-        <button id="darkModeToggle" class="toggle-button" onclick="toggleDarkMode()">切換深色模式</button>
         <script>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
@@ -313,9 +316,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 }
             }
 
-            function toggleDarkMode() {
-                document.body.classList.toggle('dark-mode');
-            }
+
 
             function copyCode(code, button) {
                 navigator.clipboard.writeText(code).then(function() {
