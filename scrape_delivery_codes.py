@@ -81,7 +81,6 @@ def scrape_foodpanda_codes():
         return []
 
 def generate_html(ubereats_codes, foodpanda_codes):
-    # 根據 content 進行分類
     categories = {"UberEats": {}, "Foodpanda": {}}
     
     for code in ubereats_codes:
@@ -106,6 +105,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
             categories["Foodpanda"][category] = []
         categories["Foodpanda"][category].append(code)
     
+    # 加入深色模式的 CSS
     html_template = """
     <!DOCTYPE html>
     <html lang="zh-TW">
@@ -120,10 +120,12 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 padding: 10px; 
                 margin: 0;
                 background-color: #f0f0f0;
+                color: #333;
+                transition: background-color 0.3s, color 0.3s;
             }
             h1 { 
                 text-align: center; 
-                color: #333;
+                color: inherit;
             }
             .sidebar {
                 width: 250px;
@@ -179,7 +181,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
             }
             .button {
                 display: block;
-                width: calc(100% - 30px); /* 調整按鈕寬度 */
+                width: calc(100% - 30px); 
                 padding: 10px;
                 border: none;
                 border-radius: 5px;
@@ -190,23 +192,23 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 background-color: #4CAF50;
                 color: white;
                 margin-top: 10px;
-                margin: 0 auto; /* 置中按鈕 */
+                margin: 0 auto;
             }
             .copied {
                 background-color: #45a049;
             }
             .toggle-button {
                 display: block;
-                background-color: transparent; /* 透明背景 */
+                background-color: transparent;
                 color: white;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
                 margin-bottom: 10px;
-                position: fixed; /* 固定位置 */
-                top: 10px; /* 距離頂部 10px */
-                left: 10px; /* 距離左側 10px */
-                z-index: 1001; /* 確保在最上層 */
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1001;
             }
             .toggle-button div {
                 width: 25px;
@@ -219,15 +221,37 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 background-color: #575757;
                 margin: 15px 0;
             }
-            @media (max-width: 768px) {
-                .sidebar {
-                    width: 100%;
-                    transform: translateX(-100%);
+
+            /* 深色模式 */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #121212;
+                    color: #e0e0e0;
                 }
-                .content.shifted {
-                    margin-left: 0;
+                .code-card {
+                    background-color: #1e1e1e;
+                    color: #e0e0e0;
+                }
+                .code {
+                    color: #ff7b7b;
                 }
             }
+
+            /* 手動切換深色模式 */
+            body.dark-mode {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            body.dark-mode .code-card {
+                background-color: #1e1e1e;
+            }
+            body.dark-mode .code {
+                color: #ff7b7b;
+            }
+            body.dark-mode .sidebar {
+                background-color: #1e1e1e;
+            }
+
         </style>
     </head>
     <body>
@@ -303,10 +327,16 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 });
                 return false;
             }
+
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+            }
         </script>
+        <button onclick="toggleDarkMode()">切換深色模式</button>
     </body>
     </html>
     """
+    return html_template
     
     template = Template(html_template)
     html_content = template.render(categories=categories)
