@@ -26,7 +26,6 @@ def scrape_ubereats_codes():
                     
                     code = re.sub(r'\s*\(.*?\)\s*', '', code)
                     
-                    # 使用新的 URL Scheme
                     deep_link = f"ubereats://promo/apply?client_id=eats&promoCode={urllib.parse.quote(code)}"
                     
                     codes.append({
@@ -64,7 +63,6 @@ def scrape_foodpanda_codes():
                     if code_element and 'data-code' in code_element.attrs:
                         code = code_element.text.strip()
                         
-                        # 創建深層連結
                         deep_link = f"foodpanda://coupon?code={urllib.parse.quote(code)}"
                         
                         codes.append({
@@ -80,9 +78,60 @@ def scrape_foodpanda_codes():
         print(f"爬取 Foodpanda 優惠碼過程中出現錯誤: {e}")
         return []
 
-def generate_html(ubereats_codes, foodpanda_codes):
-    categories = {"UberEats": {}, "Foodpanda": {}}
+def scrape_uber_codes():
+    url = "https://www.callingtaiwan.com.tw/uber-promo-code/"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        codes = []
+        
+        table = soup.find('table')
+        if table:
+            rows = table.find_all('tr')[1:]  # 跳過表頭
+            for row in rows:
+                cols = row.find_all('td')
+                if len(cols) >= 4:
+                    expiry = cols[0].text.strip()
+                    country = cols[1].text.strip()
+                    content = cols[2].text.strip()
+                    code = cols[3].text.strip()
+                    
+                    code = re.sub(r'\s*\(.*?\)\s*', '', code)
+                    
+                    deep_link = f"uber://?action=applyPromo&client_id=&code={urllib.parse.quote(code)}"
+                    
+                    codes.append({
+                        "expiry": expiry,
+                        "country": country,
+                        "content": content,
+                        "code": code,
+                        "deep_link": deep_link
+                    })
+        
+        print(f"找到 {len(codes)} 個 Uber 優惠碼")
+        return codes
+    except Exception as e:
+        print(f"爬取 Uber 優惠碼過程中出現錯誤: {e}")
+        return []
+
+def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
+    categories = {"Uber": {}, "UberEats": {}, "Foodpanda": {}}
     
+    # 處理 Uber 代碼
+    for code in uber_codes:
+        category = re.search(r'【(.*?)】', code['content'])
+        if category:
+            category = category.group(1)
+        else:
+            category = '其他'
+        
+        if category not in categories["Uber"]:
+            categories["Uber"][category] = []
+        categories["Uber"][category].append(code)
+    
+    # 處理 UberEats 代碼
     for code in ubereats_codes:
         category = re.search(r'【(.*?)】', code['content'])
         if category:
@@ -94,6 +143,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
             categories["UberEats"][category] = []
         categories["UberEats"][category].append(code)
     
+    # 處理 Foodpanda 代碼
     for code in foodpanda_codes:
         category = re.search(r'【(.*?)】', code['content'])
         if category:
@@ -112,6 +162,7 @@ def generate_html(ubereats_codes, foodpanda_codes):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>外送平台優惠碼</title>
+        <link rel="icon" type="image/png" href="coupon.PNG">
         <style>
             body { 
                 font-family: Arial, sans-serif; 
@@ -255,7 +306,11 @@ def generate_html(ubereats_codes, foodpanda_codes):
                 }
             }
 
-
+            .country {
+                font-size: 0.8em;
+                color: #888;
+                margin-top: 5px;
+            }
         </style>
     </head>
     <body>
@@ -265,7 +320,12 @@ def generate_html(ubereats_codes, foodpanda_codes):
             <div></div>
         </div>
         <div class="sidebar" id="sidebar">
-            <h2>外送平台優惠碼</h2>
+            <h2>優惠碼</h2>
+            <h3>Uber</h3>
+            {% for category in categories["Uber"] %}
+                <a href="#Uber-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
+            {% endfor %}
+            <div class="divider"></div>
             <h3>UberEats</h3>
             {% for category in categories["UberEats"] %}
                 <a href="#UberEats-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
@@ -277,7 +337,20 @@ def generate_html(ubereats_codes, foodpanda_codes):
             {% endfor %}
         </div>
         <div class="content" id="content">
-            <h1>外送平台優惠碼</h1>
+            <h1>優惠碼</h1>
+            <h2 id="Uber">Uber</h2>
+            {% for category, codes in categories["Uber"].items() %}
+                <h3 id="Uber-{{ category }}">{{ category }}</h3>
+                {% for code in codes %}
+                    <div class="code-card">
+                        <h2>{{ code.content }}</h2>
+                        <p class="country">{{ code.country }}</p>
+                        <p>優惠碼: <span class="code">{{ code.code }}</span></p>
+                        <p>有效期限: {{ code.expiry }}</p>
+                        <a href="{{ code.deep_link }}" class="button" onclick="copyCode('{{ code.code }}', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                {% endfor %}
+            {% endfor %}
             <h2 id="UberEats">UberEats</h2>
             {% for category, codes in categories["UberEats"].items() %}
                 <h3 id="UberEats-{{ category }}">{{ category }}</h3>
@@ -362,7 +435,8 @@ def generate_html(ubereats_codes, foodpanda_codes):
 if __name__ == "__main__":
     ubereats_codes = scrape_ubereats_codes()
     foodpanda_codes = scrape_foodpanda_codes()
-    if ubereats_codes or foodpanda_codes:
-        generate_html(ubereats_codes, foodpanda_codes)
+    uber_codes = scrape_uber_codes()
+    if ubereats_codes or foodpanda_codes or uber_codes:
+        generate_html(ubereats_codes, foodpanda_codes, uber_codes)
     else:
         print("沒有找到優惠碼，不創建 HTML 檔案")
