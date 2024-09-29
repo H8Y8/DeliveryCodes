@@ -1,53 +1,44 @@
-# 優惠碼爬蟲與生成 HTML 頁面
+# 外送平台優惠碼爬蟲
 
-此專案包含一個 Python 腳本，用於爬取 UberEats 和 Foodpanda 的優惠碼，並生成對應的 HTML 頁面。
+這個專案旨在爬取並整理 Uber、UberEats 和 Foodpanda 的優惠碼,並生成一個易於瀏覽的 HTML 頁面。
 
-## 目錄結構
-```markdown
-.
-├── scrape_delivery_codes.py
-├── ubereats_scraper_mobile.py
-├── foodpanda_scraper_mobile.py
-└── README.md
-```
-## 需求
+## 主要功能
 
-- Python 3.x
-- requests
-- BeautifulSoup4
-- jinja2
+- 爬取 Uber、UberEats 和 Foodpanda 的優惠碼
+- 將優惠碼按照類別整理
+- 生成包含所有優惠碼的 HTML 頁面
+- 支持一鍵複製優惠碼並打開相應的 APP
 
-可以使用以下命令安裝所需的 Python 套件：
+## 文件說明
 
-```bash
-pip install requests beautifulsoup4 jinja2
-```
+- `scrape_delivery_codes.py`: 主要的爬蟲和 HTML 生成腳本
+- `DeliveryCodes.html`: 生成的包含所有優惠碼的 HTML 文件
+- `coupon.PNG`: 網站圖標文件
 
-## 使用說明
+## 使用方法
 
-### 優惠碼爬蟲
+1. 確保已安裝所需的 Python 庫:
+   ```bash
+   pip install requests beautifulsoup4 jinja2
+   ```
 
-`scrape_delivery_codes.py` 腳本會爬取 UberEats 和 Foodpanda 的優惠碼並生成 HTML 頁面。
+2. 運行爬蟲腳本:
+   ```bash
+   python scrape_delivery_codes.py
+   ```
 
-#### 執行步驟
-
-1. 執行腳本：
-
-    ```bash
-    python scrape_delivery_codes.py
-    ```
-
-2. 腳本會爬取優惠碼並生成一個 HTML 檔案，保存至指定的路徑。預設路徑為 `./DeliveryCodes.html`。
-
-## 腳本說明
-
-### `scrape_delivery_codes.py`
-
-- `scrape_ubereats_codes()`: 爬取 UberEats 優惠碼的函數，返回優惠碼列表。
-- `scrape_foodpanda_codes()`: 爬取 Foodpanda 優惠碼的函數，返回優惠碼列表。
-- `generate_html(ubereats_codes, foodpanda_codes)`: 根據優惠碼列表生成 HTML 頁面並保存至指定路徑。
+3. 在瀏覽器中打開生成的 `DeliveryCodes.html` 文件查看結果
 
 ## 注意事項
 
-- 請確保網路連線正常，以便腳本能夠成功爬取優惠碼。
-- 如果需要更改 HTML 檔案的保存路徑，請修改腳本中的 `filename` 變數。
+- 請確保 `coupon.PNG` 文件與生成的 HTML 文件在同一目錄下
+- 爬蟲結果的準確性取決於源網站的結構,如遇到問題請檢查源網站是否有變動
+
+
+## 貢獻
+
+歡迎提出建議和改進意見!
+
+## 授權
+
+本專案採用 MIT 授權協議。
