@@ -154,6 +154,24 @@
                 color: #888;
                 margin-top: 5px;
             }
+
+            @media (max-width: 768px) {
+                .sidebar {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    transform: none;
+                }
+                .content {
+                    margin-left: 0;
+                }
+                .content.shifted {
+                    margin-left: 0;
+                }
+                .toggle-button {
+                    display: none;
+                }
+            }
         </style>
     </head>
     <body>
@@ -2113,16 +2131,43 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
                 var content = document.getElementById('content');
-                if (sidebar.style.transform === 'translateX(0%)') {
-                    sidebar.style.transform = 'translateX(-100%)';
-                    content.classList.remove('shifted');
+                if (window.innerWidth <= 768) {
+                    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+                        sidebar.style.display = 'block';
+                    } else {
+                        sidebar.style.display = 'none';
+                    }
                 } else {
-                    sidebar.style.transform = 'translateX(0%)';
-                    content.classList.add('shifted');
+                    if (sidebar.style.transform === 'translateX(0%)') {
+                        sidebar.style.transform = 'translateX(-100%)';
+                        content.classList.remove('shifted');
+                    } else {
+                        sidebar.style.transform = 'translateX(0%)';
+                        content.classList.add('shifted');
+                    }
                 }
             }
 
+            function scrollToSection(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({behavior: "smooth"});
+                }
+                if (window.innerWidth <= 768) {
+                    toggleSidebar();
+                }
+            }
 
+            window.addEventListener('resize', function() {
+                var sidebar = document.getElementById('sidebar');
+                if (window.innerWidth > 768) {
+                    sidebar.style.display = 'block';
+                    sidebar.style.transform = 'translateX(-100%)';
+                } else {
+                    sidebar.style.display = 'none';
+                    sidebar.style.transform = 'none';
+                }
+            });
 
             function copyCode(code, button) {
                 navigator.clipboard.writeText(code).then(function() {
