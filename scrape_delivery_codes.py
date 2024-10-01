@@ -92,6 +92,7 @@ def scrape_uber_codes():
         
         codes = []
         
+        # 找到指定的連結
         table = soup.find('table')
         if table:
             rows = table.find_all('tr')[1:]  # 跳過表頭
@@ -101,19 +102,24 @@ def scrape_uber_codes():
                     expiry = cols[0].text.strip()
                     country = cols[1].text.strip()
                     content = cols[2].text.strip()
-                    code = cols[3].text.strip()
+                    code_cell = cols[3]
                     
-                    code = re.sub(r'\s*\(.*?\)\s*', '', code)
+                    # 找到所有的優惠碼連結
+                    code_links = code_cell.find_all('a', class_='rdc_box_button')
                     
-                    deep_link = f"uber://?action=applyPromo&client_id=&code={urllib.parse.quote(code)}"
-                    
-                    codes.append({
-                        "expiry": expiry,
-                        "country": country,
-                        "content": content,
-                        "code": code,
-                        "deep_link": deep_link
-                    })
+                    for code_link in code_links:
+                        code = code_link.text.strip()
+                        code = re.sub(r'\s*\(.*?\)\s*', '', code)
+                        
+                        deep_link = f"uber://?action=applyPromo&client_id=&code={urllib.parse.quote(code)}"
+                        
+                        codes.append({
+                            "expiry": expiry,
+                            "country": country,
+                            "content": content,
+                            "code": code,
+                            "deep_link": deep_link
+                        })
         
         print(f"找到 {len(codes)} 個 Uber 優惠碼")
         return codes
@@ -254,22 +260,16 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
             }
             .toggle-button {
                 display: block;
-                background-color: transparent;
+                background-color: #333;
                 color: white;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
-                margin-bottom: 10px;
                 position: fixed;
                 top: 10px;
                 left: 10px;
                 z-index: 1001;
-            }
-            .toggle-button div {
-                width: 25px;
-                height: 3px;
-                background-color: #333;
-                margin: 4px 0;
+                border-radius: 5px;
             }
             .divider {
                 height: 1px;
@@ -277,86 +277,67 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                 margin: 15px 0;
             }
 
+            @media (max-width: 768px) {
+                .content.shifted {
+                    margin-left: 0;
+                }
+            }
+
             /* 深色模式 */
             @media (prefers-color-scheme: dark) {
                 body {
                     background-color: #121212;
-                    color: #ffffff; // 將字體顏色改為白色
+                    color: #ffffff;
                 }
                 h1, h2, h3, p {
-                    color: #ffffff; // 將標題和段落文字顏色改為白色
+                    color: #ffffff;
                 }
                 .code-card {
                     background-color: #1e1e1e;
                 }
                 .code-card h2 {
-                    color: #ffffff; // 將優惠碼標題顏色改為白色
+                    color: #ffffff;
                 }
                 .code-card p {
-                    color: #dddddd; // 將段落文字顏色調亮
+                    color: #dddddd;
                 }
                 .code {
-                    color: #ff7b7b; // 保持優惠碼顏色
+                    color: #ff7b7b;
                 }
                 .button {
-                    color: #ffffff; // 按鈕文字顏色改為白色
-                    background-color: #4CAF50; // 按鈕背景保持不變或根據需要調整
+                    color: #ffffff;
+                    background-color: #4CAF50;
                 }
                 .sidebar {
                     background-color: #1e1e1e;
-                    color: #ffffff; // 側邊欄文字顏色改為白色
+                    color: #ffffff;
                 }
                 .sidebar a {
-                    color: #ffffff; // 側邊欄連結文字顏色改為白色
-                }
-            }
-
-            .country {
-                font-size: 0.8em;
-                color: #888;
-                margin-top: 5px;
-            }
-
-            @media (max-width: 768px) {
-                .sidebar {
-                    width: 100%;
-                    height: auto;
-                    position: relative;
-                    transform: none;
-                }
-                .content {
-                    margin-left: 0;
-                }
-                .content.shifted {
-                    margin-left: 0;
-                }
-                .toggle-button {
-                    display: none;
+                    color: #ffffff;
                 }
             }
         </style>
     </head>
     <body>
         <div class="toggle-button" onclick="toggleSidebar()">
-            <div></div>
-            <div></div>
-            <div></div>
+            ☰ 菜單
         </div>
         <div class="sidebar" id="sidebar">
             <h2>優惠碼</h2>
+            <div class="divider"></div>
             <h3>Uber</h3>
             {% for category in categories["Uber"] %}
-                <a href="#Uber-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
+                <a href="#Uber-{{ category|replace(' ', '_') }}" onclick="scrollToSection('Uber-{{ category|replace(' ', '_') }}')">{{ category }}</a>
             {% endfor %}
             <div class="divider"></div>
             <h3>UberEats</h3>
             {% for category in categories["UberEats"] %}
-                <a href="#UberEats-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
+                <a href="#UberEats-{{ category|replace(' ', '_') }}" onclick="scrollToSection('UberEats-{{ category|replace(' ', '_') }}')">{{ category }}</a>
             {% endfor %}
             <div class="divider"></div>
             <h3>Foodpanda</h3>
             {% for category in categories["Foodpanda"] %}
-                <a href="#Foodpanda-{{ category }}" onclick="toggleSidebar()">{{ category }}</a>
+                <a href="#Foodpanda-{{ category|replace(' ', '_') }}" onclick="scrollToSection('Foodpanda-{{ category|replace(' ', '_') }}')">{{ category }}</a>
             {% endfor %}
         </div>
         <div class="content" id="content">
@@ -403,18 +384,12 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
                 var content = document.getElementById('content');
-                if (window.innerWidth <= 768) {
-                    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-                        sidebar.style.display = 'block';
-                    } else {
-                        sidebar.style.display = 'none';
-                    }
+                if (sidebar.style.transform === 'translateX(0%)') {
+                    sidebar.style.transform = 'translateX(-100%)';
+                    content.classList.remove('shifted');
                 } else {
-                    if (sidebar.style.transform === 'translateX(0%)') {
-                        sidebar.style.transform = 'translateX(-100%)';
-                        content.classList.remove('shifted');
-                    } else {
-                        sidebar.style.transform = 'translateX(0%)';
+                    sidebar.style.transform = 'translateX(0%)';
+                    if (window.innerWidth > 768) {
                         content.classList.add('shifted');
                     }
                 }
@@ -432,12 +407,11 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
 
             window.addEventListener('resize', function() {
                 var sidebar = document.getElementById('sidebar');
-                if (window.innerWidth > 768) {
-                    sidebar.style.display = 'block';
-                    sidebar.style.transform = 'translateX(-100%)';
-                } else {
-                    sidebar.style.display = 'none';
-                    sidebar.style.transform = 'none';
+                var content = document.getElementById('content');
+                if (window.innerWidth <= 768) {
+                    content.classList.remove('shifted');
+                } else if (sidebar.style.transform === 'translateX(0%)') {
+                    content.classList.add('shifted');
                 }
             });
 
