@@ -92,22 +92,16 @@
             }
             .toggle-button {
                 display: block;
-                background-color: transparent;
+                background-color: #333;
                 color: white;
                 padding: 10px;
                 text-align: center;
                 cursor: pointer;
-                margin-bottom: 10px;
                 position: fixed;
                 top: 10px;
                 left: 10px;
                 z-index: 1001;
-            }
-            .toggle-button div {
-                width: 25px;
-                height: 3px;
-                background-color: #333;
-                margin: 4px 0;
+                border-radius: 5px;
             }
             .divider {
                 height: 1px;
@@ -115,198 +109,120 @@
                 margin: 15px 0;
             }
 
+            @media (max-width: 768px) {
+                .content.shifted {
+                    margin-left: 0;
+                }
+            }
+
             /* 深色模式 */
             @media (prefers-color-scheme: dark) {
                 body {
                     background-color: #121212;
-                    color: #ffffff; // 將字體顏色改為白色
+                    color: #ffffff;
                 }
                 h1, h2, h3, p {
-                    color: #ffffff; // 將標題和段落文字顏色改為白色
+                    color: #ffffff;
                 }
                 .code-card {
                     background-color: #1e1e1e;
                 }
                 .code-card h2 {
-                    color: #ffffff; // 將優惠碼標題顏色改為白色
+                    color: #ffffff;
                 }
                 .code-card p {
-                    color: #dddddd; // 將段落文字顏色調亮
+                    color: #dddddd;
                 }
                 .code {
-                    color: #ff7b7b; // 保持優惠碼顏色
+                    color: #ff7b7b;
                 }
                 .button {
-                    color: #ffffff; // 按鈕文字顏色改為白色
-                    background-color: #4CAF50; // 按鈕背景保持不變或根據需要調整
+                    color: #ffffff;
+                    background-color: #4CAF50;
                 }
                 .sidebar {
                     background-color: #1e1e1e;
-                    color: #ffffff; // 側邊欄文字顏色改為白色
+                    color: #ffffff;
                 }
                 .sidebar a {
-                    color: #ffffff; // 側邊欄連結文字顏色改為白色
-                }
-            }
-
-            .country {
-                font-size: 0.8em;
-                color: #888;
-                margin-top: 5px;
-            }
-
-            @media (max-width: 768px) {
-                .sidebar {
-                    width: 100%;
-                    height: auto;
-                    position: relative;
-                    transform: none;
-                }
-                .content {
-                    margin-left: 0;
-                }
-                .content.shifted {
-                    margin-left: 0;
-                }
-                .toggle-button {
-                    display: none;
+                    color: #ffffff;
                 }
             }
         </style>
     </head>
     <body>
         <div class="toggle-button" onclick="toggleSidebar()">
-            <div></div>
-            <div></div>
-            <div></div>
+            ☰ 菜單
         </div>
         <div class="sidebar" id="sidebar">
             <h2>優惠碼</h2>
+            <div class="divider"></div>
             <h3>Uber</h3>
             
-                <a href="#Uber-新戶" onclick="toggleSidebar()">新戶</a>
+                <a href="#Uber-舊戶" onclick="scrollToSection('Uber-舊戶')">舊戶</a>
             
-                <a href="#Uber-舊戶" onclick="toggleSidebar()">舊戶</a>
+                <a href="#Uber-舊戶-機場" onclick="scrollToSection('Uber-舊戶-機場')">舊戶-機場</a>
             
-                <a href="#Uber-舊戶-機場" onclick="toggleSidebar()">舊戶-機場</a>
+                <a href="#Uber-舊戶-會員" onclick="scrollToSection('Uber-舊戶-會員')">舊戶-會員</a>
             
-                <a href="#Uber-舊戶-會員" onclick="toggleSidebar()">舊戶-會員</a>
-            
-                <a href="#Uber-異業合作" onclick="toggleSidebar()">異業合作</a>
-            
-                <a href="#Uber-信用卡" onclick="toggleSidebar()">信用卡</a>
+                <a href="#Uber-新戶" onclick="scrollToSection('Uber-新戶')">新戶</a>
             
             <div class="divider"></div>
             <h3>UberEats</h3>
             
-                <a href="#UberEats-首購推薦" onclick="toggleSidebar()">首購推薦</a>
+                <a href="#UberEats-首購推薦" onclick="scrollToSection('UberEats-首購推薦')">首購推薦</a>
             
-                <a href="#UberEats-首購" onclick="toggleSidebar()">首購</a>
+                <a href="#UberEats-首購" onclick="scrollToSection('UberEats-首購')">首購</a>
             
-                <a href="#UberEats-外送" onclick="toggleSidebar()">外送</a>
+                <a href="#UberEats-外送" onclick="scrollToSection('UberEats-外送')">外送</a>
             
-                <a href="#UberEats-外送 – 指定店家" onclick="toggleSidebar()">外送 – 指定店家</a>
+                <a href="#UberEats-外送_–_指定店家" onclick="scrollToSection('UberEats-外送_–_指定店家')">外送 – 指定店家</a>
             
-                <a href="#UberEats-外送-指定店家" onclick="toggleSidebar()">外送-指定店家</a>
+                <a href="#UberEats-外送-指定店家" onclick="scrollToSection('UberEats-外送-指定店家')">外送-指定店家</a>
             
-                <a href="#UberEats-自取" onclick="toggleSidebar()">自取</a>
+                <a href="#UberEats-自取" onclick="scrollToSection('UberEats-自取')">自取</a>
             
-                <a href="#UberEats-商城-指定店家" onclick="toggleSidebar()">商城-指定店家</a>
+                <a href="#UberEats-商城-指定店家" onclick="scrollToSection('UberEats-商城-指定店家')">商城-指定店家</a>
             
-                <a href="#UberEats-信用卡回饋" onclick="toggleSidebar()">信用卡回饋</a>
+                <a href="#UberEats-信用卡回饋" onclick="scrollToSection('UberEats-信用卡回饋')">信用卡回饋</a>
             
             <div class="divider"></div>
             <h3>Foodpanda</h3>
             
-                <a href="#Foodpanda-本月推薦" onclick="toggleSidebar()">本月推薦</a>
+                <a href="#Foodpanda-本月推薦" onclick="scrollToSection('Foodpanda-本月推薦')">本月推薦</a>
             
-                <a href="#Foodpanda-投票活動" onclick="toggleSidebar()">投票活動</a>
+                <a href="#Foodpanda-投票活動" onclick="scrollToSection('Foodpanda-投票活動')">投票活動</a>
             
-                <a href="#Foodpanda-外送-首購" onclick="toggleSidebar()">外送-首購</a>
+                <a href="#Foodpanda-外送-首購" onclick="scrollToSection('Foodpanda-外送-首購')">外送-首購</a>
             
-                <a href="#Foodpanda-外送-指定店家" onclick="toggleSidebar()">外送-指定店家</a>
+                <a href="#Foodpanda-外送-指定店家" onclick="scrollToSection('Foodpanda-外送-指定店家')">外送-指定店家</a>
             
-                <a href="#Foodpanda-信用卡優惠" onclick="toggleSidebar()">信用卡優惠</a>
+                <a href="#Foodpanda-信用卡優惠" onclick="scrollToSection('Foodpanda-信用卡優惠')">信用卡優惠</a>
             
-                <a href="#Foodpanda-外送/自取-信用卡優惠" onclick="toggleSidebar()">外送/自取-信用卡優惠</a>
+                <a href="#Foodpanda-外送/自取-信用卡優惠" onclick="scrollToSection('Foodpanda-外送/自取-信用卡優惠')">外送/自取-信用卡優惠</a>
             
-                <a href="#Foodpanda-外送-信用卡優惠" onclick="toggleSidebar()">外送-信用卡優惠</a>
+                <a href="#Foodpanda-外送-信用卡優惠" onclick="scrollToSection('Foodpanda-外送-信用卡優惠')">外送-信用卡優惠</a>
             
-                <a href="#Foodpanda-自取-指定店家" onclick="toggleSidebar()">自取-指定店家</a>
+                <a href="#Foodpanda-自取-指定店家" onclick="scrollToSection('Foodpanda-自取-指定店家')">自取-指定店家</a>
             
-                <a href="#Foodpanda-內用-指定店家" onclick="toggleSidebar()">內用-指定店家</a>
+                <a href="#Foodpanda-內用-指定店家" onclick="scrollToSection('Foodpanda-內用-指定店家')">內用-指定店家</a>
             
-                <a href="#Foodpanda-商城-首購" onclick="toggleSidebar()">商城-首購</a>
+                <a href="#Foodpanda-商城-首購" onclick="scrollToSection('Foodpanda-商城-首購')">商城-首購</a>
             
-                <a href="#Foodpanda-商城-指定店家" onclick="toggleSidebar()">商城-指定店家</a>
+                <a href="#Foodpanda-商城-指定店家" onclick="scrollToSection('Foodpanda-商城-指定店家')">商城-指定店家</a>
             
-                <a href="#Foodpanda-pandapro-首購" onclick="toggleSidebar()">pandapro-首購</a>
+                <a href="#Foodpanda-pandapro-首購" onclick="scrollToSection('Foodpanda-pandapro-首購')">pandapro-首購</a>
             
-                <a href="#Foodpanda-pandapro" onclick="toggleSidebar()">pandapro</a>
+                <a href="#Foodpanda-pandapro" onclick="scrollToSection('Foodpanda-pandapro')">pandapro</a>
             
-                <a href="#Foodpanda-pandago-首購" onclick="toggleSidebar()">pandago-首購</a>
+                <a href="#Foodpanda-pandago-首購" onclick="scrollToSection('Foodpanda-pandago-首購')">pandago-首購</a>
             
-                <a href="#Foodpanda-pandago" onclick="toggleSidebar()">pandago</a>
+                <a href="#Foodpanda-pandago" onclick="scrollToSection('Foodpanda-pandago')">pandago</a>
             
         </div>
         <div class="content" id="content">
             <h1>優惠碼</h1>
             <h2 id="Uber">Uber</h2>
-            
-                <h3 id="Uber-新戶">新戶</h3>
-                
-                    <div class="code-card">
-                        <h2>【新戶】免費領取一趟 150元 Uber 乘車金</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">CT2024150</span></p>
-                        <p>有效期限: 2025/01/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=CT2024150" class="button" onclick="copyCode('CT2024150', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【新戶】新戶優惠：首程 Uber Taxi 折 HK$100，加贈 2 次上、下班時段 + 2 次深夜時段 8 折優惠</h2>
-                        <p class="country">香港</p>
-                        <p>優惠碼: <span class="code">SKIPKUNGFU</span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=SKIPKUNGFU" class="button" onclick="copyCode('SKIPKUNGFU', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【新戶】新戶優惠：免費領取 100 港元，限乘 Uber Taxi</h2>
-                        <p class="country">香港</p>
-                        <p>優惠碼: <span class="code">HKDRAGON
-HKE24
-DDPHK24</span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=HKDRAGON%0AHKE24%0ADDPHK24" class="button" onclick="copyCode('HKDRAGON
-HKE24
-DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【新戶】新戶優惠：於 大阪、京都、兵庫 搭乘 Uber Taxi，享 2,500 日幣乘車優惠</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">24TRYUBER</span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=24TRYUBER" class="button" onclick="copyCode('24TRYUBER', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【新戶】新戶優惠：免費領取 2,000 日幣，限乘 Uber Taxi</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">ISJP24JULY</span></p>
-                        <p>有效期限: 2024/07/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=ISJP24JULY" class="button" onclick="copyCode('ISJP24JULY', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【新戶】新戶優惠：免費領取 5 美元折扣</h2>
-                        <p class="country">美國</p>
-                        <p>優惠碼: <span class="code">cn0sq</span></p>
-                        <p>有效期限: 用完為止</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=cn0sq" class="button" onclick="copyCode('cn0sq', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
             
                 <h3 id="Uber-舊戶">舊戶</h3>
                 
@@ -329,9 +245,17 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     <div class="code-card">
                         <h2>【舊戶】首次搭乘優步小黃，享 1 趟 150 元、3 趟 50 元，及 5 趟 40 元優惠</h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">小黃搭九遍酒吧搭九遍</span></p>
+                        <p>優惠碼: <span class="code">小黃搭九遍</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%B0%8F%E9%BB%83%E6%90%AD%E4%B9%9D%E9%81%8D%E9%85%92%E5%90%A7%E6%90%AD%E4%B9%9D%E9%81%8D" class="button" onclick="copyCode('小黃搭九遍酒吧搭九遍', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%B0%8F%E9%BB%83%E6%90%AD%E4%B9%9D%E9%81%8D" class="button" onclick="copyCode('小黃搭九遍', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】首次搭乘優步小黃，享 1 趟 150 元、3 趟 50 元，及 5 趟 40 元優惠</h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">酒吧搭九遍</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E9%85%92%E5%90%A7%E6%90%AD%E4%B9%9D%E9%81%8D" class="button" onclick="copyCode('酒吧搭九遍', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
@@ -353,17 +277,113 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     <div class="code-card">
                         <h2>【舊戶】於 台北市 “信義區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">FINDALLEY24安慰劑24XDBAR24双喜24</span></p>
+                        <p>優惠碼: <span class="code">FINDALLEY24</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=FINDALLEY24%E5%AE%89%E6%85%B0%E5%8A%9124XDBAR24%E5%8F%8C%E5%96%9C24" class="button" onclick="copyCode('FINDALLEY24安慰劑24XDBAR24双喜24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=FINDALLEY24" class="button" onclick="copyCode('FINDALLEY24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “信義區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">安慰劑24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%AE%89%E6%85%B0%E5%8A%9124" class="button" onclick="copyCode('安慰劑24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “信義區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">XDBAR24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=XDBAR24" class="button" onclick="copyCode('XDBAR24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “信義區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">双喜24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%8F%8C%E5%96%9C24" class="button" onclick="copyCode('双喜24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">BARPUN24爛醉咖啡24POSINOTPE24NADARRACH24CACTUS24MADETPE24INTENTION24NEEDLE24BARPINE24爛泥24</span></p>
+                        <p>優惠碼: <span class="code">BARPUN24</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=BARPUN24%E7%88%9B%E9%86%89%E5%92%96%E5%95%A124POSINOTPE24NADARRACH24CACTUS24MADETPE24INTENTION24NEEDLE24BARPINE24%E7%88%9B%E6%B3%A524" class="button" onclick="copyCode('BARPUN24爛醉咖啡24POSINOTPE24NADARRACH24CACTUS24MADETPE24INTENTION24NEEDLE24BARPINE24爛泥24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=BARPUN24" class="button" onclick="copyCode('BARPUN24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">爛醉咖啡24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E7%88%9B%E9%86%89%E5%92%96%E5%95%A124" class="button" onclick="copyCode('爛醉咖啡24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">POSINOTPE24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=POSINOTPE24" class="button" onclick="copyCode('POSINOTPE24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">NADARRACH24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=NADARRACH24" class="button" onclick="copyCode('NADARRACH24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">CACTUS24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=CACTUS24" class="button" onclick="copyCode('CACTUS24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">MADETPE24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=MADETPE24" class="button" onclick="copyCode('MADETPE24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">INTENTION24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=INTENTION24" class="button" onclick="copyCode('INTENTION24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">NEEDLE24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=NEEDLE24" class="button" onclick="copyCode('NEEDLE24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">BARPINE24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=BARPINE24" class="button" onclick="copyCode('BARPINE24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大安區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">爛泥24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E7%88%9B%E6%B3%A524" class="button" onclick="copyCode('爛泥24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
@@ -385,17 +405,65 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     <div class="code-card">
                         <h2>【舊戶】於 台北市 “大同區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">MIKKELLER24微醺花園24吉姆老爹24QUANDO24</span></p>
+                        <p>優惠碼: <span class="code">MIKKELLER24</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=MIKKELLER24%E5%BE%AE%E9%86%BA%E8%8A%B1%E5%9C%9224%E5%90%89%E5%A7%86%E8%80%81%E7%88%B924QUANDO24" class="button" onclick="copyCode('MIKKELLER24微醺花園24吉姆老爹24QUANDO24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=MIKKELLER24" class="button" onclick="copyCode('MIKKELLER24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大同區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">微醺花園24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%BE%AE%E9%86%BA%E8%8A%B1%E5%9C%9224" class="button" onclick="copyCode('微醺花園24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大同區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">吉姆老爹24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%90%89%E5%A7%86%E8%80%81%E7%88%B924" class="button" onclick="copyCode('吉姆老爹24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “大同區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">QUANDO24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=QUANDO24" class="button" onclick="copyCode('QUANDO24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【舊戶】於 台北市 “萬華區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">ECHO24NONSENSE24冰茶專賣店24THE58BAR24</span></p>
+                        <p>優惠碼: <span class="code">ECHO24</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=ECHO24NONSENSE24%E5%86%B0%E8%8C%B6%E5%B0%88%E8%B3%A3%E5%BA%9724THE58BAR24" class="button" onclick="copyCode('ECHO24NONSENSE24冰茶專賣店24THE58BAR24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=ECHO24" class="button" onclick="copyCode('ECHO24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “萬華區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">NONSENSE24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=NONSENSE24" class="button" onclick="copyCode('NONSENSE24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “萬華區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">冰茶專賣店24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%86%B0%E8%8C%B6%E5%B0%88%E8%B3%A3%E5%BA%9724" class="button" onclick="copyCode('冰茶專賣店24', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶】於 台北市 “萬華區” 指定酒吧 上、下車，享 優步小黃 2 趟 $50 乘車優惠，酒吧地址>></h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">THE58BAR24</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=THE58BAR24" class="button" onclick="copyCode('THE58BAR24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
@@ -415,14 +483,6 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
-                        <h2>【舊戶】開通 Uber 青少年帳戶，贈 2 趟 50 元乘車金 (限量)</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/11/10</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
                         <h2>【舊戶】Uber Taxi 1 趟 HK$100 乘車優惠，僅適用於 以 11 SKIES 為起點或終點的行程</h2>
                         <p class="country">香港</p>
                         <p>優惠碼: <span class="code">11SKIES2024</span></p>
@@ -436,38 +496,6 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                         <p>優惠碼: <span class="code">HASE50HK</span></p>
                         <p>有效期限: 2025/01/01</p>
                         <a href="uber://?action=applyPromo&client_id=&code=HASE50HK" class="button" onclick="copyCode('HASE50HK', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【舊戶】東京區 85 折，最多折 1,500 日幣</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">TOKYORIDE24</span></p>
-                        <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=TOKYORIDE24" class="button" onclick="copyCode('TOKYORIDE24', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【舊戶】“Uber One 會員” 享 Uber Taxi 5 趟 7 折乘車優惠，最高折 700 円</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">KIBOUTX24</span></p>
-                        <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=KIBOUTX24" class="button" onclick="copyCode('KIBOUTX24', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【舊戶】“Uber One 會員” 享 Uber Premium 5 趟 7 折乘車優惠，最高折1,500 円</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">KIBOUBK24</span></p>
-                        <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=KIBOUBK24" class="button" onclick="copyCode('KIBOUBK24', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【舊戶】“Uber One 會員” 享 機場接送 2 趟 5 折，最多折 5,000 円</h2>
-                        <p class="country">日本</p>
-                        <p>優惠碼: <span class="code">KIBOUAP24</span></p>
-                        <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=KIBOUAP24" class="button" onclick="copyCode('KIBOUAP24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -508,9 +536,17 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     <div class="code-card">
                         <h2>【舊戶-機場】3 趟 桃園機場送機 $100 元優惠</h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">機場叫優步優要搭飛機</span></p>
+                        <p>優惠碼: <span class="code">機場叫優步</span></p>
                         <p>有效期限: 2025/01/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E6%A9%9F%E5%A0%B4%E5%8F%AB%E5%84%AA%E6%AD%A5%E5%84%AA%E8%A6%81%E6%90%AD%E9%A3%9B%E6%A9%9F" class="button" onclick="copyCode('機場叫優步優要搭飛機', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E6%A9%9F%E5%A0%B4%E5%8F%AB%E5%84%AA%E6%AD%A5" class="button" onclick="copyCode('機場叫優步', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【舊戶-機場】3 趟 桃園機場送機 $100 元優惠</h2>
+                        <p class="country">台灣</p>
+                        <p>優惠碼: <span class="code">優要搭飛機</span></p>
+                        <p>有效期限: 2025/01/31</p>
+                        <a href="uber://?action=applyPromo&client_id=&code=%E5%84%AA%E8%A6%81%E6%90%AD%E9%A3%9B%E6%A9%9F" class="button" onclick="copyCode('優要搭飛機', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
@@ -524,21 +560,13 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     <div class="code-card">
                         <h2>【舊戶-機場】國泰航空會員 輸碼+登錄＋完成機場接送，贈 100-200 亞洲萬里通里數</h2>
                         <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">AMUBER23前往登錄>></span></p>
+                        <p>優惠碼: <span class="code">AMUBER23</span></p>
                         <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=AMUBER23%E5%89%8D%E5%BE%80%E7%99%BB%E9%8C%84%3E%3E" class="button" onclick="copyCode('AMUBER23前往登錄>>', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=AMUBER23" class="button" onclick="copyCode('AMUBER23', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
                 <h3 id="Uber-舊戶-會員">舊戶-會員</h3>
-                
-                    <div class="code-card">
-                        <h2>【舊戶-會員】免費試用 30 天 Uber One 會員服務，搭車享 95 折</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">加入 Uber One 會員>></span></p>
-                        <p>有效期限: 長期有效</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%8A%A0%E5%85%A5%20Uber%20One%20%E6%9C%83%E5%93%A1%3E%3E" class="button" onclick="copyCode('加入 Uber One 會員>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
                 
                     <div class="code-card">
                         <h2>【舊戶-會員】“Uber One 會員” 5 趟 40 元乘車優惠</h2>
@@ -589,115 +617,38 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
-                <h3 id="Uber-異業合作">異業合作</h3>
+                <h3 id="Uber-新戶">新戶</h3>
                 
                     <div class="code-card">
-                        <h2>【異業合作】購買 國泰海內外旅平險，贈 指定機場、高鐵上下車 8 折乘車優惠，最高折 $100</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載Uber >>  
- 活動詳情>></span></p>
+                        <h2>【新戶】新戶優惠：首程 Uber Taxi 折 HK$100，加贈 2 次上、下班時段 + 2 次深夜時段 8 折優惠</h2>
+                        <p class="country">香港</p>
+                        <p>優惠碼: <span class="code">SKIPKUNGFU</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89Uber%20%3E%3E%C2%A0%20%0A%20%E6%B4%BB%E5%8B%95%E8%A9%B3%E6%83%85%3E%3E" class="button" onclick="copyCode('前往下載Uber >>  
- 活動詳情>>', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=SKIPKUNGFU" class="button" onclick="copyCode('SKIPKUNGFU', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
-                        <h2>【異業合作】完成富邦 Run For Green 全民線上跑 40公里，贈 5 趟 8 折乘車優惠，單趟最高折 $50</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載Uber >>  
- 活動詳情>></span></p>
+                        <h2>【新戶】新戶優惠：免費領取 100 港元，限乘 Uber Taxi</h2>
+                        <p class="country">香港</p>
+                        <p>優惠碼: <span class="code">HKDRAGON</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89Uber%20%3E%3E%C2%A0%20%0A%20%E6%B4%BB%E5%8B%95%E8%A9%B3%E6%83%85%3E%3E" class="button" onclick="copyCode('前往下載Uber >>  
- 活動詳情>>', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=HKDRAGON" class="button" onclick="copyCode('HKDRAGON', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
-                        <h2>【異業合作】高鐵TGo會員 可以在點數 365 平台上兌換 Uber/Uber Eats $100 – $200 抵用券</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載Uber >>  
-前往兌換>></span></p>
-                        <p>有效期限: 2025/02/28</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89Uber%20%3E%3E%C2%A0%20%0A%E5%89%8D%E5%BE%80%E5%85%8C%E6%8F%9B%3E%3E" class="button" onclick="copyCode('前往下載Uber >>  
-前往兌換>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-            
-                <h3 id="Uber-信用卡">信用卡</h3>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（凱基卡）單月累積消費滿1,000元，享 2.5% 刷卡金(需登錄)</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往登錄>> 
-前往下載>></span></p>
-                        <p>有效期限: 2024/09/30</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E7%99%BB%E9%8C%84%3E%3E%20%0A%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往登錄>> 
-前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（永豐DAWHO現金回饋卡） 6% 現金回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
+                        <h2>【新戶】新戶優惠：免費領取 100 港元，限乘 Uber Taxi</h2>
+                        <p class="country">香港</p>
+                        <p>優惠碼: <span class="code">HKE24</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=HKE24" class="button" onclick="copyCode('HKE24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
-                        <h2>【信用卡】（聯邦幸福 M 卡）申請電子帳單者可享 6% 刷卡金回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
+                        <h2>【新戶】新戶優惠：免費領取 100 港元，限乘 Uber Taxi</h2>
+                        <p class="country">香港</p>
+                        <p>優惠碼: <span class="code">DDPHK24</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（遠東樂家+卡）最高 5% 回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（遠東樂行卡）當月一般消費滿 $3,000 享 3% 現金回饋，最高回饋$300 (需登錄)</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>>
-登錄去>></span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E%0A%E7%99%BB%E9%8C%84%E5%8E%BB%3E%3E" class="button" onclick="copyCode('前往下載>>
-登錄去>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（合作金庫 i 享樂生活卡）當期一般消費滿 $2,999 元，享 5% 回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（國泰世華 CUBE 卡）可享 2-3.3% 小樹點回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（玉山 Unicard）搭車可享 3% 回饋，使用任意選享 4% 回饋</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/12/31</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【信用卡】（玉山 Ubear 信用卡）享 3% 刷卡金回饋，上限 200 元</h2>
-                        <p class="country">台灣</p>
-                        <p>優惠碼: <span class="code">前往下載>></span></p>
-                        <p>有效期限: 2024/02/29</p>
-                        <a href="uber://?action=applyPromo&client_id=&code=%E5%89%8D%E5%BE%80%E4%B8%8B%E8%BC%89%3E%3E" class="button" onclick="copyCode('前往下載>>', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="uber://?action=applyPromo&client_id=&code=DDPHK24" class="button" onclick="copyCode('DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -2131,18 +2082,12 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
                 var content = document.getElementById('content');
-                if (window.innerWidth <= 768) {
-                    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-                        sidebar.style.display = 'block';
-                    } else {
-                        sidebar.style.display = 'none';
-                    }
+                if (sidebar.style.transform === 'translateX(0%)') {
+                    sidebar.style.transform = 'translateX(-100%)';
+                    content.classList.remove('shifted');
                 } else {
-                    if (sidebar.style.transform === 'translateX(0%)') {
-                        sidebar.style.transform = 'translateX(-100%)';
-                        content.classList.remove('shifted');
-                    } else {
-                        sidebar.style.transform = 'translateX(0%)';
+                    sidebar.style.transform = 'translateX(0%)';
+                    if (window.innerWidth > 768) {
                         content.classList.add('shifted');
                     }
                 }
@@ -2160,12 +2105,11 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
 
             window.addEventListener('resize', function() {
                 var sidebar = document.getElementById('sidebar');
-                if (window.innerWidth > 768) {
-                    sidebar.style.display = 'block';
-                    sidebar.style.transform = 'translateX(-100%)';
-                } else {
-                    sidebar.style.display = 'none';
-                    sidebar.style.transform = 'none';
+                var content = document.getElementById('content');
+                if (window.innerWidth <= 768) {
+                    content.classList.remove('shifted');
+                } else if (sidebar.style.transform === 'translateX(0%)') {
+                    content.classList.add('shifted');
                 }
             });
 
