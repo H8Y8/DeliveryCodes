@@ -15,7 +15,7 @@ def scrape_ubereats_codes():
         codes = []
         
         # 找到指定的連結
-        link = soup.find('a', text="UberEats 首購優惠碼/折扣碼/信用卡優惠")
+        link = soup.find('a', string="UberEats 首購優惠碼/折扣碼/信用卡優惠")
         if link:
             # 找到連結後面的第一個表格
             table = link.find_next('table')
@@ -55,7 +55,7 @@ def scrape_foodpanda_codes():
         codes = []
         
         # 找到指定的連結
-        link = soup.find('a', text="foodpanda 首購優惠碼/折扣碼/信用卡優惠")
+        link = soup.find('a', string="foodpanda 首購優惠碼/折扣碼/信用卡優惠")
         if link:
             # 找到連結後面的第一個表格
             table = link.find_next('table')
@@ -316,6 +316,24 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                 color: #888;
                 margin-top: 5px;
             }
+
+            @media (max-width: 768px) {
+                .sidebar {
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    transform: none;
+                }
+                .content {
+                    margin-left: 0;
+                }
+                .content.shifted {
+                    margin-left: 0;
+                }
+                .toggle-button {
+                    display: none;
+                }
+            }
         </style>
     </head>
     <body>
@@ -385,16 +403,43 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
             function toggleSidebar() {
                 var sidebar = document.getElementById('sidebar');
                 var content = document.getElementById('content');
-                if (sidebar.style.transform === 'translateX(0%)') {
-                    sidebar.style.transform = 'translateX(-100%)';
-                    content.classList.remove('shifted');
+                if (window.innerWidth <= 768) {
+                    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+                        sidebar.style.display = 'block';
+                    } else {
+                        sidebar.style.display = 'none';
+                    }
                 } else {
-                    sidebar.style.transform = 'translateX(0%)';
-                    content.classList.add('shifted');
+                    if (sidebar.style.transform === 'translateX(0%)') {
+                        sidebar.style.transform = 'translateX(-100%)';
+                        content.classList.remove('shifted');
+                    } else {
+                        sidebar.style.transform = 'translateX(0%)';
+                        content.classList.add('shifted');
+                    }
                 }
             }
 
+            function scrollToSection(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({behavior: "smooth"});
+                }
+                if (window.innerWidth <= 768) {
+                    toggleSidebar();
+                }
+            }
 
+            window.addEventListener('resize', function() {
+                var sidebar = document.getElementById('sidebar');
+                if (window.innerWidth > 768) {
+                    sidebar.style.display = 'block';
+                    sidebar.style.transform = 'translateX(-100%)';
+                } else {
+                    sidebar.style.display = 'none';
+                    sidebar.style.transform = 'none';
+                }
+            });
 
             function copyCode(code, button) {
                 navigator.clipboard.writeText(code).then(function() {
@@ -422,11 +467,11 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     filename = 'DeliveryCodes.html'
     
     current_dir = os.getcwd()
-    print(f"當前工作目錄: {current_dir}")
+    #print(f"當前工作目錄: {current_dir}")
     
-    print("目錄內容:")
-    for item in os.listdir(current_dir):
-        print(item)
+    #print("目錄內容:")
+    #for item in os.listdir(current_dir):
+        #print(item)
     
     try:
         with open(filename, 'w', encoding='utf-8') as file:
