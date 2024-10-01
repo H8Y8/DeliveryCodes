@@ -6,7 +6,7 @@ import urllib.parse
 from jinja2 import Template
 
 def scrape_ubereats_codes():
-    url = "https://www.callingtaiwan.com.tw/ubereats優惠-最新餐廳外送首購優惠序號-折扣碼-推薦碼/"
+    url = "https://www.callingtaiwan.com.tw/%e5%a4%96%e9%80%81%e5%84%aa%e6%83%a0%e7%b8%bd%e6%95%b4%e7%90%86-foodpanda-ubereats/"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -14,26 +14,30 @@ def scrape_ubereats_codes():
         
         codes = []
         
-        table = soup.find('table')
-        if table:
-            rows = table.find_all('tr')[1:]
-            for row in rows:
-                cols = row.find_all('td')
-                if len(cols) >= 3:
-                    expiry = cols[0].text.strip()
-                    content = cols[1].text.strip()
-                    code = cols[2].text.strip()
-                    
-                    code = re.sub(r'\s*\(.*?\)\s*', '', code)
-                    
-                    deep_link = f"ubereats://promo/apply?client_id=eats&promoCode={urllib.parse.quote(code)}"
-                    
-                    codes.append({
-                        "expiry": expiry,
-                        "content": content,
-                        "code": code,
-                        "deep_link": deep_link
-                    })
+        # 找到指定的連結
+        link = soup.find('a', text="UberEats 首購優惠碼/折扣碼/信用卡優惠")
+        if link:
+            # 找到連結後面的第一個表格
+            table = link.find_next('table')
+            if table:
+                rows = table.find_all('tr')[1:]  # 跳過表頭
+                for row in rows:
+                    cols = row.find_all('td')
+                    if len(cols) >= 3:
+                        expiry = cols[0].text.strip()
+                        content = cols[1].text.strip()
+                        code = cols[2].text.strip()
+                        
+                        code = re.sub(r'\s*\(.*?\)\s*', '', code)
+                        
+                        deep_link = f"ubereats://promo/apply?client_id=eats&promoCode={urllib.parse.quote(code)}"
+                        
+                        codes.append({
+                            "expiry": expiry,
+                            "content": content,
+                            "code": code,
+                            "deep_link": deep_link
+                        })
         
         print(f"找到 {len(codes)} 個 UberEats 優惠碼")
         return codes
@@ -42,7 +46,7 @@ def scrape_ubereats_codes():
         return []
 
 def scrape_foodpanda_codes():
-    url = "https://www.callingtaiwan.com.tw/foodpanda-coupon-code/"
+    url = "https://www.callingtaiwan.com.tw/%e5%a4%96%e9%80%81%e5%84%aa%e6%83%a0%e7%b8%bd%e6%95%b4%e7%90%86-foodpanda-ubereats/"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -50,18 +54,19 @@ def scrape_foodpanda_codes():
         
         codes = []
         
-        coupon_table = soup.find('table', id='coupon_table')
-        if coupon_table:
-            rows = coupon_table.find_all('tr')[1:]  # 跳過表頭
-            for row in rows:
-                cells = row.find_all('td')
-                if len(cells) == 3:
-                    expiry_date = cells[0].text.strip()
-                    content = cells[1].text.strip()
-                    code_element = cells[2].find('a', class_='rdc_box_button')
-                    
-                    if code_element and 'data-code' in code_element.attrs:
-                        code = code_element.text.strip()
+        # 找到指定的連結
+        link = soup.find('a', text="foodpanda 首購優惠碼/折扣碼/信用卡優惠")
+        if link:
+            # 找到連結後面的第一個表格
+            table = link.find_next('table')
+            if table:
+                rows = table.find_all('tr')[1:]  # 跳過表頭
+                for row in rows:
+                    cols = row.find_all('td')
+                    if len(cols) >= 3:
+                        expiry_date = cols[0].text.strip()
+                        content = cols[1].text.strip()
+                        code = cols[2].text.strip()
                         
                         deep_link = f"foodpanda://coupon?code={urllib.parse.quote(code)}"
                         
@@ -162,7 +167,7 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>優惠碼</title>
-        <link rel="icon" type="image/png" href="coupon.png">
+        <link rel="icon" type="image/png" href="coupon.PNG">
         <style>
             body { 
                 font-family: Arial, sans-serif; 
