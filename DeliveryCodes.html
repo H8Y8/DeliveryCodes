@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>優惠碼</title>
-        <link rel="icon" type="image/png" href="coupon.png">
+        <link rel="icon" type="image/png" href="coupon.PNG">
         <style>
             body { 
                 font-family: Arial, sans-serif; 
@@ -200,6 +200,10 @@
             <div class="divider"></div>
             <h3>Foodpanda</h3>
             
+                <a href="#Foodpanda-本月推薦" onclick="toggleSidebar()">本月推薦</a>
+            
+                <a href="#Foodpanda-投票活動" onclick="toggleSidebar()">投票活動</a>
+            
                 <a href="#Foodpanda-外送-首購" onclick="toggleSidebar()">外送-首購</a>
             
                 <a href="#Foodpanda-外送-指定店家" onclick="toggleSidebar()">外送-指定店家</a>
@@ -208,7 +212,11 @@
             
                 <a href="#Foodpanda-外送/自取-信用卡優惠" onclick="toggleSidebar()">外送/自取-信用卡優惠</a>
             
+                <a href="#Foodpanda-外送-信用卡優惠" onclick="toggleSidebar()">外送-信用卡優惠</a>
+            
                 <a href="#Foodpanda-自取-指定店家" onclick="toggleSidebar()">自取-指定店家</a>
+            
+                <a href="#Foodpanda-內用-指定店家" onclick="toggleSidebar()">內用-指定店家</a>
             
                 <a href="#Foodpanda-商城-首購" onclick="toggleSidebar()">商城-首購</a>
             
@@ -697,6 +705,13 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
+                        <h2>【首購】使用台新銀行信用卡消費滿 80 元享 2 次 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">TSIB</span></p>
+                        <p>有效期限: 2025/03/31</p>
+                        <a href="ubereats://promo/apply?client_id=eats&promoCode=TSIB" class="button" onclick="copyCode('TSIB', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
                         <h2>【首購】Uber Eats 優市 首購消費滿 200 元享 1 次 5 折優惠</h2>
                         <p>優惠碼: <span class="code">十在好優</span></p>
                         <p>有效期限: 2024/10/31</p>
@@ -705,6 +720,13 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
             
                 <h3 id="UberEats-外送">外送</h3>
+                
+                    <div class="code-card">
+                        <h2>【外送】使用台新信用卡消費滿 399 元現折 80 元，每人可用 2 次 (使用期限至輸入後 14 日)</h2>
+                        <p>優惠碼: <span class="code">TSIB80</span></p>
+                        <p>有效期限: 2025/03/31</p>
+                        <a href="ubereats://promo/apply?client_id=eats&promoCode=TSIB80" class="button" onclick="copyCode('TSIB80', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
                 
                     <div class="code-card">
                         <h2>【外送】消費滿 249 元現折 50 元，每人可用 1 次 (需解鎖「月光戰士」三次訂單任務)</h2>
@@ -1011,261 +1033,505 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
             
             <h2 id="Foodpanda">Foodpanda</h2>
             
+                <h3 id="Foodpanda-本月推薦">本月推薦</h3>
+                
+                    <div class="code-card">
+                        <h2>【本月推薦】消費滿 399 元享 1 次 85 折優惠，最高折抵 100 元</h2>
+                        <p>優惠碼: <span class="code">十二歲要快樂
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E8%A6%81%E5%BF%AB%E6%A8%82%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲要快樂
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【本月推薦】每日 6:00-21:59 消費滿 179 元享 1 次 65 折優惠，最高折抵 100 元 (分眾)</h2>
+                        <p>優惠碼: <span class="code">十二歲要回鍋
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E8%A6%81%E5%9B%9E%E9%8D%8B%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲要回鍋
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【本月推薦】「pandapro 會員」訂閱會員消費滿 229 元現折 30 元，每人可用 5 次</h2>
+                        <p>優惠碼: <span class="code">訂閱就省
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E8%A8%82%E9%96%B1%E5%B0%B1%E7%9C%81%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('訂閱就省
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【本月推薦】「pandapro 會員」消費滿額享 2 次 79 折優惠，最高折抵 150 元</h2>
+                        <p>優惠碼: <span class="code">十二歲要吃飯
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E8%A6%81%E5%90%83%E9%A3%AF%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲要吃飯
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+            
+                <h3 id="Foodpanda-投票活動">投票活動</h3>
+                
+                    <div class="code-card">
+                        <h2>【投票活動】於活動期間進入 【2024 foodpanda 饕客金選獎】投票網頁，完成投票後並登錄個人資訊即可抽iPhone 16、胖達幣</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/14</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+            
                 <h3 id="Foodpanda-外送-首購">外送-首購</h3>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首 2 筆訂單滿 199 元現折 4 折，單筆最高折 200 元</h2>
-                        <p>優惠碼: <span class="code">CALLING</span></p>
+                        <p>優惠碼: <span class="code">CALLING
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=CALLING" class="button" onclick="copyCode('CALLING', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=CALLING%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('CALLING
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購滿 199 元享 2 次 5 折優惠，最高折抵 175 元</h2>
-                        <p>優惠碼: <span class="code">foodpanda</span></p>
+                        <p>優惠碼: <span class="code">foodpanda
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=foodpanda" class="button" onclick="copyCode('foodpanda', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=foodpanda%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('foodpanda
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（中國人壽）</h2>
-                        <p>優惠碼: <span class="code">pscli24</span></p>
+                        <p>優惠碼: <span class="code">pscli24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pscli24" class="button" onclick="copyCode('pscli24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pscli24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pscli24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（全球人壽）</h2>
-                        <p>優惠碼: <span class="code">psing24</span></p>
+                        <p>優惠碼: <span class="code">psing24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psing24" class="button" onclick="copyCode('psing24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psing24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psing24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（富邦產險）</h2>
-                        <p>優惠碼: <span class="code">psfbi24</span></p>
+                        <p>優惠碼: <span class="code">psfbi24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psfbi24" class="button" onclick="copyCode('psfbi24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psfbi24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psfbi24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（台新ATM）</h2>
-                        <p>優惠碼: <span class="code">psts24</span></p>
+                        <p>優惠碼: <span class="code">psts24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psts24" class="button" onclick="copyCode('psts24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psts24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psts24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購滿 200 元現折 100 元（信用卡）</h2>
-                        <p>優惠碼: <span class="code">PSOP22</span></p>
+                        <p>優惠碼: <span class="code">PSOP22
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=PSOP22" class="button" onclick="copyCode('PSOP22', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSOP22%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSOP22
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（VISA卡）</h2>
-                        <p>優惠碼: <span class="code">psvs24</span></p>
+                        <p>優惠碼: <span class="code">psvs24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2025/01/31</p>
-                        <a href="foodpanda://coupon?code=psvs24" class="button" onclick="copyCode('psvs24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psvs24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psvs24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（台新卡）</h2>
-                        <p>優惠碼: <span class="code">PSTSB24</span></p>
+                        <p>優惠碼: <span class="code">PSTSB24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSTSB24" class="button" onclick="copyCode('PSTSB24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSTSB24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSTSB24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（中信 Line Pay 卡）</h2>
+                        <p>優惠碼: <span class="code">psctbclp24
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=psctbclp24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psctbclp24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 250 元（中信 foodpanda 聯名卡）</h2>
+                        <p>優惠碼: <span class="code">fpctbc
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=fpctbc%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('fpctbc
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（第一銀行信用卡）</h2>
-                        <p>優惠碼: <span class="code">psftb24</span></p>
+                        <p>優惠碼: <span class="code">psftb24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psftb24" class="button" onclick="copyCode('psftb24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psftb24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psftb24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（萬事達卡）</h2>
-                        <p>優惠碼: <span class="code">psms24</span></p>
+                        <p>優惠碼: <span class="code">psms24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psms24" class="button" onclick="copyCode('psms24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psms24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psms24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（JCB 卡）</h2>
-                        <p>優惠碼: <span class="code">PSJCB24</span></p>
+                        <p>優惠碼: <span class="code">PSJCB24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSJCB24" class="button" onclick="copyCode('PSJCB24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSJCB24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSJCB24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（新光卡）</h2>
-                        <p>優惠碼: <span class="code">psskb24</span></p>
+                        <p>優惠碼: <span class="code">psskb24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psskb24" class="button" onclick="copyCode('psskb24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psskb24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psskb24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（星展卡）</h2>
-                        <p>優惠碼: <span class="code">psdbs24</span></p>
+                        <p>優惠碼: <span class="code">psdbs24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psdbs24" class="button" onclick="copyCode('psdbs24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psdbs24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psdbs24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（永豐卡）</h2>
-                        <p>優惠碼: <span class="code">PSSNP24</span></p>
+                        <p>優惠碼: <span class="code">PSSNP24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSSNP24" class="button" onclick="copyCode('PSSNP24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSSNP24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSSNP24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（凱基卡）</h2>
-                        <p>優惠碼: <span class="code">pskgi24</span></p>
+                        <p>優惠碼: <span class="code">pskgi24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pskgi24" class="button" onclick="copyCode('pskgi24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pskgi24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pskgi24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（聯邦卡）</h2>
-                        <p>優惠碼: <span class="code">PSUBOT24</span></p>
+                        <p>優惠碼: <span class="code">PSUBOT24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSUBOT24" class="button" onclick="copyCode('PSUBOT24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSUBOT24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSUBOT24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（兆豐卡）</h2>
-                        <p>優惠碼: <span class="code">psmega24</span></p>
+                        <p>優惠碼: <span class="code">psmega24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psmega24" class="button" onclick="copyCode('psmega24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psmega24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psmega24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（玉山卡）</h2>
-                        <p>優惠碼: <span class="code">psesun24</span></p>
+                        <p>優惠碼: <span class="code">psesun24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psesun24" class="button" onclick="copyCode('psesun24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psesun24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psesun24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（遠東商銀卡）</h2>
-                        <p>優惠碼: <span class="code">psfeib24</span></p>
+                        <p>優惠碼: <span class="code">psfeib24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psfeib24" class="button" onclick="copyCode('psfeib24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psfeib24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psfeib24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（安泰卡）</h2>
-                        <p>優惠碼: <span class="code">pset24</span></p>
+                        <p>優惠碼: <span class="code">pset24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pset24" class="button" onclick="copyCode('pset24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pset24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pset24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-首購】首購限定：消費滿 199 元享 5 折優惠，最高折抵 200 元，再享 1 張 5 折優惠券和 10 次免外送費（LINE BANK卡）</h2>
-                        <p>優惠碼: <span class="code">pslb24</span></p>
+                        <p>優惠碼: <span class="code">pslb24
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pslb24" class="button" onclick="copyCode('pslb24', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pslb24%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pslb24
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
                 <h3 id="Foodpanda-外送-指定店家">外送-指定店家</h3>
                 
                     <div class="code-card">
+                        <h2>【外送-指定店家】麥當勞 韓風甜辣炸鷄腿系列餐享優惠價、阿華田脆酷冰炫風新上市</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/22</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
                         <h2>【外送-指定店家】肯德基 消費滿 359 元現折 60 元</h2>
-                        <p>優惠碼: <span class="code">十二歲啃德基</span></p>
+                        <p>優惠碼: <span class="code">十二歲啃德基
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%95%83%E5%BE%B7%E5%9F%BA" class="button" onclick="copyCode('十二歲啃德基', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%95%83%E5%BE%B7%E5%9F%BA%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲啃德基
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】肯德基 生日專屬套餐(義式香草紙包雞XL套餐(提供至10/28)或咔啦雞腿堡XL餐)享 75 折優惠、草莓起司冰淇淋大福享第 2 件 5 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】漢堡王 勁濃安格斯牛肉堡雞薯餐、華鱈魚堡雞薯餐、經典脆雞堡雞薯餐享 75 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/14</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】必勝客 指定口味大比薩享優惠價 299 元、指定口味小比薩享同品項買 1 送 1 優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】必勝客、Pizza Hut 生日專屬套餐(粉紅醬海鮮紙包飯【單點】＋ 咔滋餅【單片】口味五選一)享 75 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】必勝客霸王功夫雞專門店 消費滿 250 元現折 30 元、「pandapro 會員」現折 50 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】達美樂 訂購香蔥燒肉捲獨享餐贈百事可樂</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/20</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】星巴克 冰焦糖奶香星享那堤、冷萃咖啡享第 2 杯 5 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/08</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】星巴克 焦糖奶香星享那堤、特選馥郁那堤享第 2 杯 5 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/09-2024/10/21</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】星巴克 焦糖奶香星享那堤、阿里山蜜柚烏龍青茶享第 2 杯 5 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/22-2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】星巴克 每週二於【限時優惠專區】消費滿 279 元現折 70 元</h2>
-                        <p>優惠碼: <span class="code">週二星享日</span></p>
+                        <p>優惠碼: <span class="code">週二星享日
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E9%80%B1%E4%BA%8C%E6%98%9F%E4%BA%AB%E6%97%A5" class="button" onclick="copyCode('週二星享日', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E9%80%B1%E4%BA%8C%E6%98%9F%E4%BA%AB%E6%97%A5%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('週二星享日
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】CoCo 都可 消費滿 319 元享 1 次 85 折優惠，最高折抵 70 元</h2>
-                        <p>優惠碼: <span class="code">十二歲喝都可</span></p>
+                        <p>優惠碼: <span class="code">十二歲喝都可
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/14</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%96%9D%E9%83%BD%E5%8F%AF" class="button" onclick="copyCode('十二歲喝都可', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%96%9D%E9%83%BD%E5%8F%AF%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲喝都可
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】王品集團旗下指定餐廳 消費滿 349 元享 2 次 8 折優惠，最高折抵 150 元、消費滿 1000 元享 1 次 8 折優惠，最高折抵 200 元</h2>
-                        <p>優惠碼: <span class="code">王品五百</span></p>
+                        <p>優惠碼: <span class="code">王品五百
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E7%8E%8B%E5%93%81%E4%BA%94%E7%99%BE" class="button" onclick="copyCode('王品五百', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E7%8E%8B%E5%93%81%E4%BA%94%E7%99%BE%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('王品五百
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】微風集團旗下指定餐廳 消費滿 499 元享 1 次 79 折優惠，最高折抵 120 元</h2>
-                        <p>優惠碼: <span class="code">微風三館慶</span></p>
+                        <p>優惠碼: <span class="code">微風三館慶
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/17-2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%BE%AE%E9%A2%A8%E4%B8%89%E9%A4%A8%E6%85%B6" class="button" onclick="copyCode('微風三館慶', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%BE%AE%E9%A2%A8%E4%B8%89%E9%A4%A8%E6%85%B6%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('微風三館慶
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】指定店家 消費滿 329 元享 1 次 8 折優惠，最高折抵 80 元</h2>
-                        <p>優惠碼: <span class="code">十月在地名店</span></p>
+                        <p>優惠碼: <span class="code">十月在地名店
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E6%9C%88%E5%9C%A8%E5%9C%B0%E5%90%8D%E5%BA%97" class="button" onclick="copyCode('十月在地名店', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E6%9C%88%E5%9C%A8%E5%9C%B0%E5%90%8D%E5%BA%97%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十月在地名店
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】指定店家 每週四消費滿 329 元現折 135 元，每人可用 1 次</h2>
-                        <p>優惠碼: <span class="code">十月週四四折</span></p>
+                        <p>優惠碼: <span class="code">十月週四四折
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E6%9C%88%E9%80%B1%E5%9B%9B%E5%9B%9B%E6%8A%98" class="button" onclick="copyCode('十月週四四折', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E6%9C%88%E9%80%B1%E5%9B%9B%E5%9B%9B%E6%8A%98%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十月週四四折
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】Mister Donut、三商巧福、肯德基(部分指定店家)、添好運、了凡油雞‧燒臘‧飯‧麵、樂雅樂 每週四消費滿 400 元現折 150 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】必勝客、拿坡里 每週四消費滿 250 元現折 80 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】肯德基 KFC 甜點專賣店 每週四消費滿 150 元現折 60 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】肯德基「pandapro 會員」消費滿 359 元現折 60 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/14</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-指定店家】肯德基蛋撻店「pandapro 會員」消費滿 279 元現折 30 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/14</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】三商巧福「pandapro 會員」消費滿 399 元享 7 折優惠，最高折抵 140 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY40</span></p>
+                        <p>優惠碼: <span class="code">PRODAY40
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/02 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY40" class="button" onclick="copyCode('PRODAY40', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY40%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY40
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】可不可熟成紅茶「pandapro 會員」消費滿 279 元享 7 折優惠，最高折抵 100 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY40</span></p>
+                        <p>優惠碼: <span class="code">PRODAY40
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/02 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY40" class="button" onclick="copyCode('PRODAY40', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY40%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY40
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】路易莎「pandapro 會員」消費滿 279 元享 7 折優惠，最高折抵 100 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY41</span></p>
+                        <p>優惠碼: <span class="code">PRODAY41
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/09 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY41" class="button" onclick="copyCode('PRODAY41', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY41%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY41
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】Mister Donut「pandapro 會員」消費滿 379 元享 7 折優惠，最高折抵 140 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY41</span></p>
+                        <p>優惠碼: <span class="code">PRODAY41
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/09 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY41" class="button" onclick="copyCode('PRODAY41', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY41%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY41
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】85度C「pandapro 會員」消費滿 299 元享 7 折優惠，最高折抵 100 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY42</span></p>
+                        <p>優惠碼: <span class="code">PRODAY42
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/16 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY42" class="button" onclick="copyCode('PRODAY42', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY42%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY42
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】必勝客「pandapro 會員」消費滿 449 元享 7 折優惠，最高折抵 140 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY43</span></p>
+                        <p>優惠碼: <span class="code">PRODAY43
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/23 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY43" class="button" onclick="copyCode('PRODAY43', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY43%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY43
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【外送-指定店家】肯德基「pandapro 會員」消費滿 329 元享 7 折優惠，最高折抵 120 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY44</span></p>
+                        <p>優惠碼: <span class="code">PRODAY44
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/30 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY44" class="button" onclick="copyCode('PRODAY44', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PRODAY44%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY44
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1273,9 +1539,11 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【信用卡優惠】「中國信託 foodpanda 聯名卡」：回饋最高 5% 胖達幣、新戶好禮三選一，再送 pandapro 一個月免費；美食外送滿 279 元享 25% 胖達幣回饋，最高回饋 100 胖達幣，每人可用 1 次；生鮮雜貨指定店家滿 699 元享 25% 胖達幣回饋，最高回饋 250 胖達幣，每人可用 1 次；外帶自取滿 179 元享 25% 胖達幣回饋，最高回饋 100 胖達幣，每人可用 1 次</h2>
-                        <p>優惠碼: <span class="code">十二歲刷這張</span></p>
+                        <p>優惠碼: <span class="code">十二歲刷這張
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%88%B7%E9%80%99%E5%BC%B5" class="button" onclick="copyCode('十二歲刷這張', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%88%B7%E9%80%99%E5%BC%B5%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲刷這張
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1283,9 +1551,101 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【外送/自取-信用卡優惠】達美樂 使用 foodpanda 聯名卡付款滿 499 元享最高回饋 100 胖達幣，每個月可用 1 次</h2>
-                        <p>優惠碼: <span class="code">省省刷達美樂</span></p>
+                        <p>優惠碼: <span class="code">省省刷達美樂
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=%E7%9C%81%E7%9C%81%E5%88%B7%E9%81%94%E7%BE%8E%E6%A8%82" class="button" onclick="copyCode('省省刷達美樂', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E7%9C%81%E7%9C%81%E5%88%B7%E9%81%94%E7%BE%8E%E6%A8%82%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('省省刷達美樂
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+            
+                <h3 id="Foodpanda-外送-信用卡優惠">外送-信用卡優惠</h3>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「VISA卡」：單筆滿 50 元享 12 次 9 折優惠，最高折抵 50 元</h2>
+                        <p>優惠碼: <span class="code">psvisafp10off
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2025/01/31</p>
+                        <a href="foodpanda://coupon?code=psvisafp10off%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psvisafp10off
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「JCB卡」：舊會員單筆消費滿 300 元現折 100 元</h2>
+                        <p>優惠碼: <span class="code">PSJCB410
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=PSJCB410%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSJCB410
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「中信LinePay卡」：舊會員消費滿 260 元現折 20 元</h2>
+                        <p>優惠碼: <span class="code">psctbc410
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=psctbc410%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psctbc410
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「中信LinePay卡」：舊會員於早餐時段(5:30-11:00)消費滿 200 元現折 15 元</h2>
+                        <p>優惠碼: <span class="code">psctbce410
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/10/31</p>
+                        <a href="foodpanda://coupon?code=psctbce410%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psctbce410
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「星展銀行卡」：舊會員每週五消費滿 299 元現折 50 元 (限量前1000名)</h2>
+                        <p>優惠碼: <span class="code">24dbs50
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=24dbs50%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('24dbs50
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「聯邦銀行卡」：當月累積消費滿 1500 元享 10% 刷卡金回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「凱基銀行卡」：用 APP 綁定且單月累積消費滿 1000 元享 2.5% 刷卡金回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「新光銀行 OU點點卡」：指定通路最高享 4% 回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「永豐MITSUI OUTLET PARK聯名卡」：指定通路享 10％ 刷卡金回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「永豐DAWHO卡」：美食外送最高享 7% 現金回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【外送-信用卡優惠】「國泰世華CUBE卡」：指定消費最高享小樹點 3.3% 回饋</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1293,30 +1653,48 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【自取-指定店家】指定店家 消費滿 179 元享 3 次 9 折優惠，最高折抵 30 元</h2>
-                        <p>優惠碼: <span class="code">十二歲拿外帶</span></p>
+                        <p>優惠碼: <span class="code">十二歲拿外帶
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%8B%BF%E5%A4%96%E5%B8%B6" class="button" onclick="copyCode('十二歲拿外帶', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%8B%BF%E5%A4%96%E5%B8%B6%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲拿外帶
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【自取-指定店家】指定飲料店家 每日 14:00 – 17:00 消費滿 179 元享 3 次 8 折優惠，最高折抵 50 元</h2>
-                        <p>優惠碼: <span class="code">十二歲拿飲料</span></p>
+                        <p>優惠碼: <span class="code">十二歲拿飲料
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%8B%BF%E9%A3%B2%E6%96%99" class="button" onclick="copyCode('十二歲拿飲料', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%8B%BF%E9%A3%B2%E6%96%99%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲拿飲料
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【自取-指定店家】可口可樂魔力食刻專區 消費滿 300 元折 30 元</h2>
-                        <p>優惠碼: <span class="code">就要可口可樂</span></p>
+                        <p>優惠碼: <span class="code">就要可口可樂
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/14</p>
-                        <a href="foodpanda://coupon?code=%E5%B0%B1%E8%A6%81%E5%8F%AF%E5%8F%A3%E5%8F%AF%E6%A8%82" class="button" onclick="copyCode('就要可口可樂', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%B0%B1%E8%A6%81%E5%8F%AF%E5%8F%A3%E5%8F%AF%E6%A8%82%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('就要可口可樂
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【自取-指定店家】指定店家 消費滿 169 元享 1 次 8 折優惠，最高折抵 40 元 (分眾)</h2>
-                        <p>優惠碼: <span class="code">十二歲免排隊</span></p>
+                        <p>優惠碼: <span class="code">十二歲免排隊
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%85%8D%E6%8E%92%E9%9A%8A" class="button" onclick="copyCode('十二歲免排隊', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%85%8D%E6%8E%92%E9%9A%8A%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲免排隊
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+            
+                <h3 id="Foodpanda-內用-指定店家">內用-指定店家</h3>
+                
+                    <div class="code-card">
+                        <h2>【內用-指定店家】野人 Shabu「pandapro 會員」出示已訂閱 pandapro 之頁面享免費「嫩肩豚肉」或「牧場直送大腹豚肉」一盤</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1324,121 +1702,245 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨滿 199 元享 1 次 4 折優惠，最高折抵 300 元</h2>
-                        <p>優惠碼: <span class="code">SHOPS</span></p>
+                        <p>優惠碼: <span class="code">SHOPS
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=SHOPS" class="button" onclick="copyCode('SHOPS', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=SHOPS%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('SHOPS
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，消費滿 379 元享 5 折優惠，最高折抵 220 元</h2>
-                        <p>優惠碼: <span class="code">FRESH</span></p>
+                        <p>優惠碼: <span class="code">FRESH
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=FRESH" class="button" onclick="copyCode('FRESH', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=FRESH%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('FRESH
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，家樂福 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">家樂福首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E5%AE%B6%E6%A8%82%E7%A6%8F%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('家樂福首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，於 屈臣氏 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">屈臣氏首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E5%B1%88%E8%87%A3%E6%B0%8F%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('屈臣氏首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，愛買 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">愛買首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E6%84%9B%E8%B2%B7%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('愛買首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，於 楓康超市 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">楓康首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E6%A5%93%E5%BA%B7%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('楓康首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，於 丁丁藥局 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">丁丁首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E4%B8%81%E4%B8%81%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('丁丁首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，於 全聯福利中心 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">全聯首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E5%85%A8%E8%81%AF%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('全聯首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，於 燦坤 消費享 5 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">燦坤首購 
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 兌完為止</p>
+                        <a href="foodpanda://coupon?code=%E7%87%A6%E5%9D%A4%E9%A6%96%E8%B3%BC%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('燦坤首購 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費 (中國人壽)</h2>
-                        <p>優惠碼: <span class="code">pscli24m</span></p>
+                        <p>優惠碼: <span class="code">pscli24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pscli24m" class="button" onclick="copyCode('pscli24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pscli24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pscli24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費 (全球人壽)</h2>
-                        <p>優惠碼: <span class="code">psing24m</span></p>
+                        <p>優惠碼: <span class="code">psing24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psing24m" class="button" onclick="copyCode('psing24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psing24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psing24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷 JCB 晶緻等級以上信用卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">PSJCB24M</span></p>
+                        <p>優惠碼: <span class="code">PSJCB24M 
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSJCB24M" class="button" onclick="copyCode('PSJCB24M', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSJCB24M%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSJCB24M 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷萬事達卡 Mastercard，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psms24m</span></p>
+                        <p>優惠碼: <span class="code">psms24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psms24m" class="button" onclick="copyCode('psms24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psms24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psms24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，刷VISA卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
+                        <p>優惠碼: <span class="code">psvs24m
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2025/01/31</p>
+                        <a href="foodpanda://coupon?code=psvs24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psvs24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，刷中信 LinePay 卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
+                        <p>優惠碼: <span class="code">psctbclp24m
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=psctbclp24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psctbclp24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-首購】首次訂購生鮮雜貨，刷中信 foodpanda 聯名卡，消費滿 379 元享 5 折優惠，最高折抵 300 元</h2>
+                        <p>優惠碼: <span class="code">fpctbcm
+(點擊折扣碼可複製)</span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=fpctbcm%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('fpctbcm
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷第一銀行信用卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psftb24m</span></p>
+                        <p>優惠碼: <span class="code">psftb24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psftb24m" class="button" onclick="copyCode('psftb24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psftb24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psftb24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷台新卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">PSTSB24M</span></p>
+                        <p>優惠碼: <span class="code">PSTSB24M
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSTSB24M" class="button" onclick="copyCode('PSTSB24M', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSTSB24M%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSTSB24M
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷新光卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psskb24m</span></p>
+                        <p>優惠碼: <span class="code">psskb24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psskb24m" class="button" onclick="copyCode('psskb24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psskb24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psskb24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷星展卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psdbs24m</span></p>
+                        <p>優惠碼: <span class="code">psdbs24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psdbs24m" class="button" onclick="copyCode('psdbs24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psdbs24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psdbs24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷永豐卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">PSSNP24M</span></p>
+                        <p>優惠碼: <span class="code">PSSNP24M 
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSSNP24M" class="button" onclick="copyCode('PSSNP24M', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSSNP24M%20%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSSNP24M 
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷凱基卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">pskgi24m</span></p>
+                        <p>優惠碼: <span class="code">pskgi24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pskgi24m" class="button" onclick="copyCode('pskgi24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pskgi24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pskgi24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷聯邦卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">PSUBOT24M</span></p>
+                        <p>優惠碼: <span class="code">PSUBOT24M
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=PSUBOT24M" class="button" onclick="copyCode('PSUBOT24M', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=PSUBOT24M%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PSUBOT24M
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷兆豐卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psmega24m</span></p>
+                        <p>優惠碼: <span class="code">psmega24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psmega24m" class="button" onclick="copyCode('psmega24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psmega24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psmega24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷遠東商銀卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">psfeib24m</span></p>
+                        <p>優惠碼: <span class="code">psfeib24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=psfeib24m" class="button" onclick="copyCode('psfeib24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=psfeib24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('psfeib24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷安泰卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">pset24m</span></p>
+                        <p>優惠碼: <span class="code">pset24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pset24m" class="button" onclick="copyCode('pset24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pset24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pset24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-首購】首次訂購生鮮雜貨，刷LINE BANK卡，消費滿 379 元享 5 折優惠，最高折抵 220 元，再享 1 張 5 折優惠券和 10 次免外送費</h2>
-                        <p>優惠碼: <span class="code">pslb24m</span></p>
+                        <p>優惠碼: <span class="code">pslb24m
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=pslb24m" class="button" onclick="copyCode('pslb24m', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=pslb24m%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('pslb24m
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1446,51 +1948,79 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】大潤發 消費滿 999 元享 1 次 88 折優惠，最高折抵 180 元</h2>
-                        <p>優惠碼: <span class="code">潤發九省</span></p>
+                        <p>優惠碼: <span class="code">潤發九省
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/02</p>
-                        <a href="foodpanda://coupon?code=%E6%BD%A4%E7%99%BC%E4%B9%9D%E7%9C%81" class="button" onclick="copyCode('潤發九省', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E6%BD%A4%E7%99%BC%E4%B9%9D%E7%9C%81%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('潤發九省
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】7-ELEVEN 消費滿 399 元享 3 次 79 折優惠，最高折抵 120 元</h2>
-                        <p>優惠碼: <span class="code">十二歲愛小七</span></p>
+                        <p>優惠碼: <span class="code">十二歲愛小七
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%84%9B%E5%B0%8F%E4%B8%83" class="button" onclick="copyCode('十二歲愛小七', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%84%9B%E5%B0%8F%E4%B8%83%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲愛小七
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】家樂福 每週一至週五消費滿 899 元享 1 次 9 折優惠，最高折抵 200 元</h2>
-                        <p>優惠碼: <span class="code">十二歲愛樂福</span></p>
+                        <p>優惠碼: <span class="code">十二歲愛樂福
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%84%9B%E6%A8%82%E7%A6%8F" class="button" onclick="copyCode('十二歲愛樂福', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%84%9B%E6%A8%82%E7%A6%8F%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲愛樂福
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】精選店家 消費滿 1199 元/滿 849 元/滿 549 元享 1 次 79 折優惠，最高折抵 280 元</h2>
-                        <p>優惠碼: <span class="code">十二歲粉快樂</span></p>
+                        <p>優惠碼: <span class="code">十二歲粉快樂
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/13</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E7%B2%89%E5%BF%AB%E6%A8%82" class="button" onclick="copyCode('十二歲粉快樂', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E7%B2%89%E5%BF%AB%E6%A8%82%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲粉快樂
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-指定店家】純色 Pure & Sexy、Dr.情趣(忠孝門市)、The D、CR保險套情人(台中逢甲店)、CR保險套情人(台南總店) 購買純色 Pure & Sexy「純愛杯二代」滿 899 元享 1 次 79 折優惠，最高折抵 200 元</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/10/08-2024/10/21</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】精選店家 消費滿 849 元/滿 449 元享 1 次 77 折優惠，最高折抵 300 元</h2>
-                        <p>優惠碼: <span class="code">十二歲慶初一</span></p>
+                        <p>優惠碼: <span class="code">十二歲慶初一
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/03 限定</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%85%B6%E5%88%9D%E4%B8%80" class="button" onclick="copyCode('十二歲慶初一', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%85%B6%E5%88%9D%E4%B8%80%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲慶初一
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】精選店家 消費滿 849 元/滿 449 元享 1 次 77 折優惠，最高折抵 300 元</h2>
-                        <p>優惠碼: <span class="code">十二歲慶初十五</span></p>
+                        <p>優惠碼: <span class="code">十二歲慶初十五
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/17 限定</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%85%B6%E5%88%9D%E5%8D%81%E4%BA%94" class="button" onclick="copyCode('十二歲慶初十五', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E6%85%B6%E5%88%9D%E5%8D%81%E4%BA%94%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲慶初十五
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【商城-指定店家】母嬰用品、藥局等精選店家 消費滿 849 元享 1 次 79 折優惠，最高折抵 200 元</h2>
-                        <p>優惠碼: <span class="code">十二歲小寶貝</span></p>
+                        <p>優惠碼: <span class="code">十二歲小寶貝
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/20 限定</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%B0%8F%E5%AF%B6%E8%B2%9D" class="button" onclick="copyCode('十二歲小寶貝', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%B0%8F%E5%AF%B6%E8%B2%9D%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲小寶貝
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
+                    </div>
+                
+                    <div class="code-card">
+                        <h2>【商城-指定店家】7-ELEVEN 精品咖啡享第 2 杯 7 折優惠</h2>
+                        <p>優惠碼: <span class="code">前往訂餐 >></span></p>
+                        <p>有效期限: 2024/12/31</p>
+                        <a href="foodpanda://coupon?code=%E5%89%8D%E5%BE%80%E8%A8%82%E9%A4%90%20%3E%3E" class="button" onclick="copyCode('前往訂餐 >>', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1498,9 +2028,11 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【pandapro-首購】首次訂閱 pandapro 月費制享 0 元優惠，或任一方案現折 119 元</h2>
-                        <p>優惠碼: <span class="code">FREE</span></p>
+                        <p>優惠碼: <span class="code">FREE
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=FREE" class="button" onclick="copyCode('FREE', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=FREE%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('FREE
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1508,23 +2040,29 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【pandapro】訂閱 pandapro 半年制享 5 折優惠</h2>
-                        <p>優惠碼: <span class="code">calling</span></p>
+                        <p>優惠碼: <span class="code">calling
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/12/31</p>
-                        <a href="foodpanda://coupon?code=calling" class="button" onclick="copyCode('calling', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=calling%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('calling
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【pandapro】再次訂閱 pandapro 月費制享 5 折優惠</h2>
-                        <p>優惠碼: <span class="code">back50</span></p>
+                        <p>優惠碼: <span class="code">back50
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=back50" class="button" onclick="copyCode('back50', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=back50%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('back50
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【pandapro】訂閱 pandapro 年費制享 7 折優惠</h2>
-                        <p>優惠碼: <span class="code">LOVE</span></p>
+                        <p>優惠碼: <span class="code">LOVE
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=LOVE" class="button" onclick="copyCode('LOVE', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=LOVE%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('LOVE
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1532,16 +2070,20 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【pandago-首購】首次使用pandago服務享 1 次運費 2 折優惠，最高折抵 150 元</h2>
-                        <p>優惠碼: <span class="code">十二歲快遞</span></p>
+                        <p>優惠碼: <span class="code">十二歲快遞
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 2024/10/31</p>
-                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%BF%AB%E9%81%9E" class="button" onclick="copyCode('十二歲快遞', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%8D%81%E4%BA%8C%E6%AD%B2%E5%BF%AB%E9%81%9E%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('十二歲快遞
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【pandago-首購】首次使用pandago服務享 1 次運費 5 折優惠，最高折抵 80 元</h2>
-                        <p>優惠碼: <span class="code">快送</span></p>
+                        <p>優惠碼: <span class="code">快送
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=%E5%BF%AB%E9%80%81" class="button" onclick="copyCode('快送', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%BF%AB%E9%80%81%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('快送
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
@@ -1549,16 +2091,20 @@ DDPHK24', this); return false;">複製優惠碼並開啟APP</a>
                 
                     <div class="code-card">
                         <h2>【pandago】使用 pandago 服務滿 125 元享 2 次 85 折優惠，最高折抵 30 元</h2>
-                        <p>優惠碼: <span class="code">幫我送</span></p>
+                        <p>優惠碼: <span class="code">幫我送
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=%E5%B9%AB%E6%88%91%E9%80%81" class="button" onclick="copyCode('幫我送', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E5%B9%AB%E6%88%91%E9%80%81%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('幫我送
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
                     <div class="code-card">
                         <h2>【pandago】使用 pandago 服務享 8 次 8 折優惠，最高折抵 88 元</h2>
-                        <p>優惠碼: <span class="code">發送</span></p>
+                        <p>優惠碼: <span class="code">發送
+(點擊折扣碼可複製)</span></p>
                         <p>有效期限: 兌完為止</p>
-                        <a href="foodpanda://coupon?code=%E7%99%BC%E9%80%81" class="button" onclick="copyCode('發送', this); return false;">複製優惠碼並開啟APP</a>
+                        <a href="foodpanda://coupon?code=%E7%99%BC%E9%80%81%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('發送
+(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
                     </div>
                 
             
