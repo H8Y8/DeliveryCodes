@@ -317,6 +317,23 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                 }
             }
         </style>
+        <script>
+        // 添加新的 JavaScript 函數
+        function saveScrollPosition() {
+            localStorage.setItem('scrollPosition', window.pageYOffset);
+        }
+
+        function restoreScrollPosition() {
+            var scrollPosition = localStorage.getItem('scrollPosition');
+            if (scrollPosition) {
+                window.scrollTo(0, parseInt(scrollPosition));
+                localStorage.removeItem('scrollPosition');
+            }
+        }
+
+        // 頁面加載時恢復滾動位置
+        window.onload = restoreScrollPosition;
+        </script>
     </head>
     <body>
         <div class="toggle-button" onclick="toggleSidebar()">
@@ -422,10 +439,12 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                     setTimeout(function() {
                         button.textContent = '複製優惠碼並開啟APP';
                         button.classList.remove('copied');
+                        saveScrollPosition(); // 保存滾動位置
                         window.location.href = button.href;
                     }, 500);
                 }, function(err) {
                     console.error('無法複製文字: ', err);
+                    saveScrollPosition(); // 保存滾動位置
                     window.location.href = button.href;
                 });
                 return false;
@@ -441,11 +460,6 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     filename = 'DeliveryCodes.html'
     
     current_dir = os.getcwd()
-    #print(f"當前工作目錄: {current_dir}")
-    
-    #print("目錄內容:")
-    #for item in os.listdir(current_dir):
-        #print(item)
     
     try:
         with open(filename, 'w', encoding='utf-8') as file:
