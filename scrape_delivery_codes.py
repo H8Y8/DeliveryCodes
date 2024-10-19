@@ -320,19 +320,19 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
         <script>
         // 添加新的 JavaScript 函數
         function saveScrollPosition() {
-            localStorage.setItem('scrollPosition', window.pageYOffset);
+            sessionStorage.setItem('scrollPosition', window.pageYOffset);
         }
 
         function restoreScrollPosition() {
-            var scrollPosition = localStorage.getItem('scrollPosition');
+            var scrollPosition = sessionStorage.getItem('scrollPosition');
             if (scrollPosition) {
                 window.scrollTo(0, parseInt(scrollPosition));
-                localStorage.removeItem('scrollPosition');
+                sessionStorage.removeItem('scrollPosition');
             }
         }
 
         // 頁面加載時恢復滾動位置
-        window.onload = restoreScrollPosition;
+        window.addEventListener('load', restoreScrollPosition);
         </script>
     </head>
     <body>
@@ -439,12 +439,12 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                     setTimeout(function() {
                         button.textContent = '複製優惠碼並開啟APP';
                         button.classList.remove('copied');
-                        saveScrollPosition(); // 保存滾動位置
+                        saveScrollPosition();
                         window.location.href = button.href;
                     }, 500);
                 }, function(err) {
                     console.error('無法複製文字: ', err);
-                    saveScrollPosition(); // 保存滾動位置
+                    saveScrollPosition();
                     window.location.href = button.href;
                 });
                 return false;
