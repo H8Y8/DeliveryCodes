@@ -439,12 +439,34 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
                     setTimeout(function() {
                         button.textContent = '複製優惠碼並開啟APP';
                         button.classList.remove('copied');
-                        saveScrollPosition();
+                        
+                        // 記錄當前滾動位置
+                        var scrollPosition = window.pageYOffset;
+                        
+                        // 更新網址
+                        var newUrl = window.location.href.split('#')[0] + '#' + scrollPosition;
+                        history.replaceState(null, '', newUrl);
+                        
+                        // 保存滾動位置到 sessionStorage
+                        sessionStorage.setItem('scrollPosition', scrollPosition);
+                        
+                        // 跳轉到 APP
                         window.location.href = button.href;
                     }, 500);
                 }, function(err) {
                     console.error('無法複製文字: ', err);
-                    saveScrollPosition();
+                    
+                    // 記錄當前滾動位置
+                    var scrollPosition = window.pageYOffset;
+                    
+                    // 更新網址
+                    var newUrl = window.location.href.split('#')[0] + '#' + scrollPosition;
+                    history.replaceState(null, '', newUrl);
+                    
+                    // 保存滾動位置到 sessionStorage
+                    sessionStorage.setItem('scrollPosition', scrollPosition);
+                    
+                    // 跳轉到 APP
                     window.location.href = button.href;
                 });
                 return false;
