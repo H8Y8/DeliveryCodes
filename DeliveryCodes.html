@@ -768,20 +768,6 @@
                 
                     <div class="code-card">
                         <h2>【外送】消費滿 179 元享 1 次 79 折優惠，最高折抵 100 元 (高雄市)</h2>
-                        <p>優惠碼: <span class="code">高雄樂活</span></p>
-                        <p>有效期限: 2024/10/23</p>
-                        <a href="ubereats://promo/apply?client_id=eats&promoCode=%E9%AB%98%E9%9B%84%E6%A8%82%E6%B4%BB" class="button" onclick="copyCode('高雄樂活', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【外送】消費滿 179 元享 1 次 79 折優惠，最高折抵 100 元 (台南市)</h2>
-                        <p>優惠碼: <span class="code">台南瘋搶</span></p>
-                        <p>有效期限: 2024/10/23</p>
-                        <a href="ubereats://promo/apply?client_id=eats&promoCode=%E5%8F%B0%E5%8D%97%E7%98%8B%E6%90%B6" class="button" onclick="copyCode('台南瘋搶', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
-                        <h2>【外送】消費滿 179 元享 1 次 79 折優惠，最高折抵 100 元 (高雄市)</h2>
                         <p>優惠碼: <span class="code">高雄有省</span></p>
                         <p>有效期限: 2024/10/26</p>
                         <a href="ubereats://promo/apply?client_id=eats&promoCode=%E9%AB%98%E9%9B%84%E6%9C%89%E7%9C%81" class="button" onclick="copyCode('高雄有省', this); return false;">複製優惠碼並開啟APP</a>
@@ -1537,15 +1523,6 @@
                     </div>
                 
                     <div class="code-card">
-                        <h2>【外送-指定店家】必勝客「pandapro 會員」消費滿 449 元享 7 折優惠，最高折抵 140 元</h2>
-                        <p>優惠碼: <span class="code">PRODAY43
-(點擊折扣碼可複製)</span></p>
-                        <p>有效期限: 2024/10/23 限定</p>
-                        <a href="foodpanda://coupon?code=PRODAY43%0A%28%E9%BB%9E%E6%93%8A%E6%8A%98%E6%89%A3%E7%A2%BC%E5%8F%AF%E8%A4%87%E8%A3%BD%29" class="button" onclick="copyCode('PRODAY43
-(點擊折扣碼可複製)', this); return false;">複製優惠碼並開啟APP</a>
-                    </div>
-                
-                    <div class="code-card">
                         <h2>【外送-指定店家】肯德基「pandapro 會員」消費滿 329 元享 7 折優惠，最高折抵 120 元</h2>
                         <p>優惠碼: <span class="code">PRODAY44
 (點擊折扣碼可複製)</span></p>
@@ -2137,12 +2114,34 @@
                     setTimeout(function() {
                         button.textContent = '複製優惠碼並開啟APP';
                         button.classList.remove('copied');
-                        saveScrollPosition();
+                        
+                        // 記錄當前滾動位置
+                        var scrollPosition = window.pageYOffset;
+                        
+                        // 更新網址
+                        var newUrl = window.location.href.split('#')[0] + '#' + scrollPosition;
+                        history.replaceState(null, '', newUrl);
+                        
+                        // 保存滾動位置到 sessionStorage
+                        sessionStorage.setItem('scrollPosition', scrollPosition);
+                        
+                        // 跳轉到 APP
                         window.location.href = button.href;
                     }, 500);
                 }, function(err) {
                     console.error('無法複製文字: ', err);
-                    saveScrollPosition();
+                    
+                    // 記錄當前滾動位置
+                    var scrollPosition = window.pageYOffset;
+                    
+                    // 更新網址
+                    var newUrl = window.location.href.split('#')[0] + '#' + scrollPosition;
+                    history.replaceState(null, '', newUrl);
+                    
+                    // 保存滾動位置到 sessionStorage
+                    sessionStorage.setItem('scrollPosition', scrollPosition);
+                    
+                    // 跳轉到 APP
                     window.location.href = button.href;
                 });
                 return false;
