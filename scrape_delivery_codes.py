@@ -172,7 +172,7 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>優惠碼</title>
+        <title>Uber、UberEats、Foodpanda 優惠碼</title>
         <link rel="icon" type="image/png" href="coupon.PNG">
         <style>
             body { 
