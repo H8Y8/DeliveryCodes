@@ -494,7 +494,7 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     adsense_script = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9625730094952985" crossorigin="anonymous"></script>'
     content_with_adsense = html_content.replace('<!-- ADSENSE_SCRIPT_PLACEHOLDER -->', adsense_script)
 
-    filename = 'deliverycoupon.html'
+    filename = 'index.html'
     try:
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(content_with_adsense)
