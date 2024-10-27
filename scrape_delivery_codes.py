@@ -480,9 +480,19 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     html_content = template.render(categories=categories)
     
     filename = 'DeliveryCodes.html'
-    
+ 
     current_dir = os.getcwd()
     
+    try:
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(html_content)
+        print(f"HTML 檔案已保存至: {os.path.join(current_dir, filename)}")
+    except PermissionError:
+        print(f"沒有權限寫入檔案: {filename}")
+    except Exception as e:
+        print(f"寫入檔案時發生錯誤: {e}")
+        
+    filename = 'deliverycoupon.html'
     try:
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(html_content)
