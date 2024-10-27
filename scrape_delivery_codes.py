@@ -174,6 +174,7 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Uber、UberEats、Foodpanda 優惠碼</title>
         <link rel="icon" type="image/png" href="coupon.PNG">
+        <!-- ADSENSE_SCRIPT_PLACEHOLDER -->
         <style>
             body { 
                 font-family: Arial, sans-serif; 
@@ -479,26 +480,25 @@ def generate_html(ubereats_codes, foodpanda_codes, uber_codes):
     template = Template(html_template)
     html_content = template.render(categories=categories)
     
+    # 為 DeliveryCodes.html 寫入原始內容
     filename = 'DeliveryCodes.html'
- 
-    current_dir = os.getcwd()
-    
+    content_without_adsense = html_content.replace('<!-- ADSENSE_SCRIPT_PLACEHOLDER -->', '')
     try:
         with open(filename, 'w', encoding='utf-8') as file:
-            file.write(html_content)
-        print(f"HTML 檔案已保存至: {os.path.join(current_dir, filename)}")
-    except PermissionError:
-        print(f"沒有權限寫入檔案: {filename}")
+            file.write(content_without_adsense)
+        print(f"HTML 檔案已保存至: {os.path.join(os.getcwd(), filename)}")
     except Exception as e:
         print(f"寫入檔案時發生錯誤: {e}")
-        
+
+    # 為 deliverycoupon.html 添加 Google AdSense 腳本
+    adsense_script = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9625730094952985" crossorigin="anonymous"></script>'
+    content_with_adsense = html_content.replace('<!-- ADSENSE_SCRIPT_PLACEHOLDER -->', adsense_script)
+
     filename = 'deliverycoupon.html'
     try:
         with open(filename, 'w', encoding='utf-8') as file:
-            file.write(html_content)
-        print(f"HTML 檔案已保存至: {os.path.join(current_dir, filename)}")
-    except PermissionError:
-        print(f"沒有權限寫入檔案: {filename}")
+            file.write(content_with_adsense)
+        print(f"HTML 檔案（含 AdSense）已保存至: {os.path.join(os.getcwd(), filename)}")
     except Exception as e:
         print(f"寫入檔案時發生錯誤: {e}")
 
@@ -510,3 +510,4 @@ if __name__ == "__main__":
         generate_html(ubereats_codes, foodpanda_codes, uber_codes)
     else:
         print("沒有找到優惠碼，不創建 HTML 檔案")
+
