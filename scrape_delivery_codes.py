@@ -67,7 +67,7 @@ def scrape_foodpanda_codes():
                         expiry_date = cols[0].text.strip()
                         content = cols[1].text.strip()
                         code = cols[2].text.strip()
-                        
+                        code = re.sub(r'\s*\(.*?\)\s*', '', code)
                         deep_link = f"foodpanda://coupon?code={urllib.parse.quote(code)}"
                         
                         codes.append({
